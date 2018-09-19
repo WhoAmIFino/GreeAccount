@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/layout_width_full"
+        android:background="@drawable/ripple_item_line_bg"
+        android:clickable="true"
+        android:onClick="userInfoClick"
+        android:paddingBottom="@dimen/head_item_padding"
+        android:paddingTop="@dimen/head_item_padding">
+
+        <com.guicommon.widget.drawable.RoundedImageView
+            android:id="@+id/main_head_img"
+            android:layout_width="@dimen/head_wh"
+            android:layout_height="@dimen/head_wh"
+            android:layout_marginLeft="@dimen/root_padding_lr"
+            android:layout_marginRight="@dimen/head_margin_right"
+            android:background="@drawable/ic_nav_headportrait" />
+
+        <TextView
+            android:id="@+id/main_nickname"
+            style="@style/txv"
+            android:layout_toRightOf="@id/main_head_img"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxEms="6"
+            android:text="@string/no_nickname" />
+
+        <TextView
+            android:id="@+id/main_account_name"
+            style="@style/txv"
+            android:layout_below="@id/main_nickname"
+            android:layout_toRightOf="@id/main_head_img"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxEms="6"/>
+
+        <LinearLayout
+            style="@style/layout_wrap"
+            android:layout_below="@id/main_account_name"
+            android:layout_toRightOf="@id/main_head_img"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/main_certification"
+                style="@style/layout_wrap"
+                android:src="@drawable/ic_list_certification"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/main_mailbox"
+                style="@style/layout_wrap"
+                android:src="@drawable/ic_list_mailbox"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/main_phone"
+                style="@style/layout_wrap"
+                android:src="@drawable/ic_list_phone_2rows"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_alert_content"
+        style="@style/layout_width_full"
+        android:layout_height="@dimen/main_alert_height"
+        android:background="@color/alert_bg"
+        android:clickable="true"
+        android:paddingRight="@dimen/root_padding_lr"
+        android:visibility="gone">
+
+        <com.gree.greeaccount.widget.VerticalTextview
+            android:id="@+id/main_alert_txv"
+            style="@style/layout_wrap"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/main_alert_del_btn"
+            android:layout_toRightOf="@+id/main_alert_del_btn"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/root_padding_lr"
+            android:textColor="@color/gree_black"
+            android:textSize="@dimen/text_des_size" />
+
+        <ImageButton
+            android:id="@+id/main_alert_del_btn"
+            style="@style/layout_wrap"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:onClick="alertDel"
+            android:src="@drawable/ic_list_delete" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/main_greeserver_title"
+        style="@style/item_classification"
+        android:text="@string/gree_service" />
+
+    <TextView
+        android:id="@+id/main_greeserver_cloud"
+        style="@style/item_txv"
+        android:drawableLeft="@drawable/ic_list_cloud"
+        android:onClick="cloundClick"
+        android:text="@string/first_gree_cloud" />
+
+    <TextView
+        android:id="@+id/main_greeserver_saleSupport"
+        style="@style/item_txv"
+        android:drawableLeft="@drawable/ic_list_service"
+        android:onClick="feedbackClick"
+        android:text="@string/first_gree_feedback" />
+
+    <TextView
+        android:id="@+id/main_greeserver_geebbs"
+        style="@style/item_txv"
+        android:drawableLeft="@drawable/ic_list_forum"
+        android:onClick="bbsClick"
+        android:text="@string/first_gree_bbs" />
+
+    <TextView
+        style="@style/item_classification"
+        android:text="@string/account_set" />
+
+    <TextView
+        android:id="@+id/main_user_info"
+        style="@style/item_txv"
+        android:drawableLeft="@drawable/ic_list_personal_information"
+        android:onClick="userInfoClick"
+        android:text="@string/user_info" />
+
+    <TextView
+        android:id="@+id/main_login"
+        style="@style/item_txv"
+        android:drawableLeft="@drawable/ic_list_manage"
+        android:onClick="devicesClick"
+        android:text="@string/login_manager" />
+
+    <TextView
+        android:id="@+id/main_safe"
+        style="@style/item_txv"
+        android:drawableLeft="@drawable/ic_list_safety"
+        android:onClick="safeClick"
+        android:text="@string/account_safe" />
+
+    <TextView
+        style="@style/item_classification"
+        android:text="@string/other" />
+
+    <TextView
+        android:id="@+id/main_setting"
+        style="@style/item_txv"
+        android:drawableLeft="@drawable/ic_list_install"
+        android:onClick="setClick"
+        android:text="@string/set" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_black"
+        android:onClick="logoutClick"
+        android:text="@string/logout" />
+
+</LinearLayout>
+

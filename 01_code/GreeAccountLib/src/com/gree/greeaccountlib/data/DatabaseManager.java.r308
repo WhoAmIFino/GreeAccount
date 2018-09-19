@@ -1,0 +1,469 @@
+package com.gree.greeaccountlib.data;
+
+import java.util.ArrayList;
+
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.BaseColumns;
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.gree.greeaccountlib.bean.ResponseBean;
+import com.gree.greeaccountlib.util.LogUtils;
+
+/**
+ * 存放跟数据库有关的常量
+ * 
+ * @author yangtiebing
+ *
+ */
+public class DatabaseManager {
+	private static String TAG = "DatabaseManager";
+
+	public static final String RESULT_SUCESS = "success";
+	public static final String RESULT_FAILED = "fail";
+	public final static int INVALID_USERINFO_ID = -1;
+	// 这个是每个Provider的标识，在Manifest中使用
+	public static final String AUTHORITY = "com.gree.provider.account.user";
+
+	public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.gree.account";
+
+	public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.gree.accunt";
+
+	/**
+	 * 跟User表相关的常量
+	 * 
+	 * @author yangtiebing
+	 *
+	 */
+	public static final class UserColumns implements BaseColumns {
+		// CONTENT_URI跟数据库的表关联，最后根据CONTENT_URI来查询对应的表
+		public static final Uri CONTENT_URI = Uri.parse("content://"
+				+ AUTHORITY + "/user");
+		public static final String TABLE_NAME = "user";
+		public static final String DEFAULT_SORT_ORDER = "phone desc";
+
+		public static final String NAME = "name";
+		public static final String PASSWORD = "password";
+		public static final String TOKEN = "token";
+		public static final String PHONE = "phone";
+		public static final String EMAIL = "email";
+		public static final String USERID = "userid";// 相当于id
+		public static final String REQUESTID = "requestid";
+		public static final String GKEY = "gkey";
+		public static final String ISLOGIN = "islogin";// 是否登录：0：不登录；1：登录
+
+	}
+
+	public static String insertOrUpdateUserInfo(Context context,
+			ResponseBean userBean) {
+		String ret;
+		int id = getIdByPhone(context, userBean.getPhone());
+		if (id == INVALID_USERINFO_ID) {
+			ret = insertLoginInfo(context, userBean);
+		} else {
+			ret = updateLoginInfo(context, userBean);
+		}
+
+		return ret;
+	}
+
+	public static String insertLoginInfo(Context context, ResponseBean userBean) {
+
+		ContentValues values = createLoginContentValues(userBean, true);
+		Uri uri = context.getContentResolver().insert(
+				DatabaseManager.UserColumns.CONTENT_URI, values);
+		LogUtils.i(TAG, "insert uri=" + uri);
+		LogUtils.i(TAG, "insert userBean =" + userBean.toString());
+		String lastPath = uri.getLastPathSegment();
+		if (TextUtils.isEmpty(lastPath)) {
+			LogUtils.i(TAG, "insert failure!");
+			return RESULT_FAILED;
+		} else {
+			LogUtils.i(TAG, "insert success! the id is " + lastPath);
+			return RESULT_SUCESS;
+		}
+
+	}
+
+	public static ArrayList<ResponseBean> queryAllUserInfo(Context context) {
+		String str = "";
+		Cursor c = context.getContentResolver()
+				.query(DatabaseManager.UserColumns.CONTENT_URI,
+						new String[] { DatabaseManager.UserColumns.NAME,
+								DatabaseManager.UserColumns.PASSWORD,
+								DatabaseManager.UserColumns.TOKEN,
+								DatabaseManager.UserColumns.PHONE,
+								DatabaseManager.UserColumns.EMAIL,
+								DatabaseManager.UserColumns.USERID,
+								DatabaseManager.UserColumns.REQUESTID,
+								DatabaseManager.UserColumns.GKEY,
+								DatabaseManager.UserColumns.ISLOGIN }, null,
+						null, null);
+
+		ArrayList<ResponseBean> list = new ArrayList<ResponseBean>();
+		if (c != null) {
+			if (c.moveToFirst()) {
+				do {
+					ResponseBean userInfoBean = initResponseBean(c);
+					list.add(userInfoBean);
+					str += "user.name=" + userInfoBean.getName()
+							+ ", user.password=" + userInfoBean.getPassword()
+							+ ", user.token = " + userInfoBean.getToken()
+							+ ", user.phone = " + userInfoBean.getPhone()
+							+ ", user.email = " + userInfoBean.getEmail()
+							+ ", user.id = " + userInfoBean.getUserId()
+							+ ", user.requestId = "
+							+ userInfoBean.getRequsetId() + ",user.gKey = "
+							+ userInfoBean.getGKey() + ",user.isLogin = "
+							+ userInfoBean.getIsLogin();
+
+					Log.i(TAG, "queryAllUserBean: " + str);
+
+				} while (c.moveToNext());
+
+			}
+			c.close();
+		} else {
+			str = "query failure!";
+			Log.i(TAG, str);
+
+		}
+		return list;
+	}
+
+	private static ResponseBean initResponseBean(Cursor c) {
+
+		ResponseBean userInfoBean = new ResponseBean();
+		userInfoBean.setName(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.NAME)));
+		userInfoBean.setPassword(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.PASSWORD)));
+		userInfoBean.setToken(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.TOKEN)));
+		userInfoBean.setPhone(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.PHONE)));
+		userInfoBean.setEmail(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.EMAIL)));
+		userInfoBean.setUserId(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.USERID)));
+		userInfoBean.setRequsetId(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.REQUESTID)));
+		userInfoBean.setGKey(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.GKEY)));
+		userInfoBean.setIsLogin(c.getString(c
+				.getColumnIndexOrThrow(DatabaseManager.UserColumns.ISLOGIN)));
+
+		return userInfoBean;
+	}
+
+	// 更新登录信息
+	public static String updateLoginInfo(Context context, ResponseBean userBean) {
+		ContentValues values = createLoginContentValues(userBean, false);
+		int id = getIdByPhone(context, userBean.getPhone());
+		if (id == INVALID_USERINFO_ID)
+			return RESULT_FAILED;
+		LogUtils.i(TAG, "updateLoginInfo userBean =" + userBean.toString());
+		int result = context.getContentResolver().update(
+				ContentUris.withAppendedId(UserColumns.CONTENT_URI, id),
+				values, null, null);
+		if (result > 0)
+			return RESULT_SUCESS;
+		return RESULT_FAILED;
+
+	}
+
+	// 更新用户信息
+	public static String updateUserInfo(Context context, ResponseBean userBean) {
+		ContentValues values = createUserInfoContentValues(userBean);
+		int id = getIdByPhone(context, userBean.getPhone());
+		if (id == INVALID_USERINFO_ID)
+			return RESULT_FAILED;
+		LogUtils.i(TAG, "updateUserInfo userBean =" + userBean.toString());
+		int result = context.getContentResolver().update(
+				ContentUris.withAppendedId(UserColumns.CONTENT_URI, id),
+				values, null, null);
+		if (result > 0)
+			return RESULT_SUCESS;
+		return RESULT_FAILED;
+
+	}
+
+	// 更新用户密码
+	public static String updateUserPwd(Context context, ResponseBean userBean) {
+		ContentValues values = new ContentValues();
+		values.put(DatabaseManager.UserColumns.PASSWORD, userBean.getPassword());
+		int id = getIdByPhone(context, userBean.getPhone());
+		if (id == INVALID_USERINFO_ID)
+			return RESULT_FAILED;
+		LogUtils.i(TAG, "updateUserPwd userBean =" + userBean.toString());
+		int result = context.getContentResolver().update(
+				ContentUris.withAppendedId(UserColumns.CONTENT_URI, id),
+				values, null, null);
+		if (result > 0)
+			return RESULT_SUCESS;
+		return RESULT_FAILED;
+
+	}
+
+	public static String updateRequestId(Context context, ResponseBean userBean) {
+		ContentValues values = new ContentValues();
+		values.put(DatabaseManager.UserColumns.REQUESTID,
+				userBean.getRequsetId());
+		int id = getIdByPhone(context, userBean.getPhone());
+		if (id == INVALID_USERINFO_ID)
+			return RESULT_FAILED;
+
+		int result = context.getContentResolver().update(
+				ContentUris.withAppendedId(UserColumns.CONTENT_URI, id),
+				values, null, null);
+		LogUtils.i(TAG, "updateRequestId result= " + result);
+		if (result > 0) {
+			return RESULT_SUCESS;
+		}
+		return RESULT_FAILED;
+	}
+
+	// 通过手机号获得RequsetId
+	public static String getRequestIdByPhone(Context context, String phone) {
+		String requestId = "";
+		if (null != phone && !phone.equals("")) {
+			requestId = doQueryBy(context, UserColumns.REQUESTID,
+					DatabaseManager.UserColumns.PHONE, phone);
+		}
+
+		LogUtils.i(TAG, "getRequestIdByPhone requestId=" + requestId);
+		return requestId;
+	}
+
+	public static ResponseBean getUserInfoByPhone(Context context, String phone) {
+		ResponseBean bean = null;
+		int id = INVALID_USERINFO_ID;
+		String[] pro = { DatabaseManager.UserColumns.NAME,
+				DatabaseManager.UserColumns.PASSWORD,
+				DatabaseManager.UserColumns.TOKEN,
+				DatabaseManager.UserColumns.PHONE,
+				DatabaseManager.UserColumns.EMAIL,
+				DatabaseManager.UserColumns.USERID,
+				DatabaseManager.UserColumns.REQUESTID,
+				DatabaseManager.UserColumns.GKEY,
+				DatabaseManager.UserColumns.ISLOGIN };
+		String where = DatabaseManager.UserColumns.PHONE + " = " + "\'" + phone
+				+ "\'";
+		Cursor cursor = context.getContentResolver()
+				.query(DatabaseManager.UserColumns.CONTENT_URI, pro, where,
+						null, null);
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				bean = initResponseBean(cursor);
+			}
+			cursor.close();
+		}
+		if (null != bean) {
+			LogUtils.i(TAG, "getUserInfoByPhone,phone: " + bean.getPhone()
+					+ ",name: " + bean.getName());
+		} else {
+			LogUtils.e(TAG, "getUserInfoByPhone is null");
+		}
+
+		return bean;
+	}
+
+	private static int getIdByPhone(Context context, String phone) {
+		int id = INVALID_USERINFO_ID;
+		String[] pro = { UserColumns._ID };
+		String where = DatabaseManager.UserColumns.PHONE + " = " + "\'" + phone
+				+ "\'";
+		Cursor cursor = context.getContentResolver()
+				.query(DatabaseManager.UserColumns.CONTENT_URI, pro, where,
+						null, null);
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				id = cursor.getInt(cursor.getColumnIndex(UserColumns._ID));
+			}
+			cursor.close();
+		}
+		LogUtils.i(TAG, "getIdByPhone: " + id);
+		return id;
+	}
+
+	private static int getIdByEmail(Context context, ResponseBean userBean) {
+		int id = INVALID_USERINFO_ID;
+		String[] pro = { UserColumns._ID };
+		String where = DatabaseManager.UserColumns.EMAIL + " = " + "\'"
+				+ userBean.getEmail() + "\'";
+		Cursor cursor = context.getContentResolver()
+				.query(DatabaseManager.UserColumns.CONTENT_URI, pro, where,
+						null, null);
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				id = cursor.getInt(cursor.getColumnIndex(UserColumns._ID));
+			}
+			cursor.close();
+		}
+		LogUtils.i(TAG, "getIdByEmail" + id);
+		return id;
+	}
+
+	private static int getIdByName(Context context, ResponseBean userBean) {
+		int id = INVALID_USERINFO_ID;
+		String[] pro = { UserColumns._ID };
+		String where = DatabaseManager.UserColumns.NAME + " = " + "\'"
+				+ userBean.getName() + "\'";
+		Cursor cursor = context.getContentResolver()
+				.query(DatabaseManager.UserColumns.CONTENT_URI, pro, where,
+						null, null);
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				id = cursor.getInt(cursor.getColumnIndex(UserColumns._ID));
+			}
+			cursor.close();
+		}
+		LogUtils.i(TAG, "getIdByName" + id);
+		return id;
+	}
+
+	// 通过手机号获得GKey
+	public static String getGKeyByUserId(Context context, String userid) {
+		String gkey = "";
+		if (null != userid && !userid.equals("")) {
+			gkey = doQueryBy(context, UserColumns.GKEY,
+					DatabaseManager.UserColumns.USERID, userid);
+			return gkey;
+		}
+		return gkey;
+	}
+
+	// 通过手机号获得Userid
+	public static String getUserIdByPhone(Context context, String phone) {
+		String userid = "";
+		// String phone = userBean.getPhone();
+		// String email = userBean.getEmail();
+		// String name = userBean.getName();
+		if (null != phone && !phone.equals("")) {
+			userid = doQueryBy(context, UserColumns.USERID,
+					DatabaseManager.UserColumns.PHONE, phone);
+			return userid;
+		}
+		// if (null != email && !email.equals("")) {
+		// userid = queryUserId(context, DatabaseManager.UserColumns.EMAIL,
+		// email);
+		// return userid;
+		// }
+		// if (null != name && !name.equals("")) {
+		// userid = queryUserId(context, DatabaseManager.UserColumns.NAME,
+		// name);
+		// return userid;
+		// }
+		return userid;
+	}
+
+	// 优先通过手机号、邮件、用户名来获得token
+	public static String getTokenByUserId(Context context, String userid) {
+		String token = "";
+		if (null != userid && !userid.equals("")) {
+			token = doQueryBy(context, UserColumns.TOKEN,
+					DatabaseManager.UserColumns.USERID, userid);
+			return token;
+		}
+		return token;
+	}
+
+	private static String doQueryBy(Context context, String projection,
+			String whereKey, String whereValue) {
+		String resultStr = "";
+		String[] pro = { projection };
+		String where = whereKey + " = " + "\'" + whereValue + "\'";
+		Cursor cursor = context.getContentResolver()
+				.query(DatabaseManager.UserColumns.CONTENT_URI, pro, where,
+						null, null);
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				resultStr = cursor.getString(cursor.getColumnIndex(projection));
+			}
+			cursor.close();
+		}
+		LogUtils.i(TAG, "doQueryBy  " + projection + ":" + resultStr);
+		return resultStr;
+	}
+
+	private static ContentValues createLoginContentValues(
+			ResponseBean userBean, boolean isInsert) {
+		ContentValues values = new ContentValues();
+		values.put(DatabaseManager.UserColumns.NAME, userBean.getName());
+		values.put(DatabaseManager.UserColumns.PASSWORD, userBean.getPassword());
+		values.put(DatabaseManager.UserColumns.TOKEN, userBean.getToken());
+		values.put(DatabaseManager.UserColumns.PHONE, userBean.getPhone());
+		values.put(DatabaseManager.UserColumns.USERID, userBean.getUserId());
+		values.put(DatabaseManager.UserColumns.GKEY, userBean.getGKey());
+		values.put(DatabaseManager.UserColumns.ISLOGIN, userBean.getIsLogin());
+		if (isInsert) {
+			values.put(DatabaseManager.UserColumns.REQUESTID,
+					userBean.getRequsetId());
+
+		}
+
+		return values;
+	}
+
+	private static ContentValues createUserInfoContentValues(
+			ResponseBean userBean) {
+		ContentValues values = new ContentValues();
+		values.put(DatabaseManager.UserColumns.NAME, userBean.getName());
+		values.put(DatabaseManager.UserColumns.PHONE, userBean.getPhone());
+		values.put(DatabaseManager.UserColumns.USERID, userBean.getUserId());
+
+		return values;
+	}
+
+	/**
+	 * 修改登录状态：0：未登录；1：登录
+	 * 
+	 * @param context
+	 * @param
+	 * @return
+	 */
+	public static String updateIsLogin(Context context, ResponseBean userBean) {
+		ContentValues values = new ContentValues();
+		values.put(DatabaseManager.UserColumns.ISLOGIN, userBean.getIsLogin());
+		int id = getIdByPhone(context, userBean.getPhone());
+		if (id == INVALID_USERINFO_ID)
+			return RESULT_FAILED;
+		LogUtils.i(TAG, "updateIsLogin IsLogin =" + userBean.getIsLogin());
+		int result = context.getContentResolver().update(
+				ContentUris.withAppendedId(UserColumns.CONTENT_URI, id),
+				values, null, null);
+		if (result > 0)
+			return RESULT_SUCESS;
+		return RESULT_FAILED;
+
+	}
+
+	/**
+	 * 通过手机号判断是否登录
+	 * 
+	 * @param context
+	 * @param phone
+	 *            ：手机号码
+	 * @return
+	 */
+	public static int getIsLoginByPhone(Context context, String phone) {
+		String loginTag = "0";
+		int id = getIdByPhone(context, phone);
+		if (id == INVALID_USERINFO_ID) {
+			return id;
+		}
+		if (null != phone && !phone.equals("")) {
+			loginTag = doQueryBy(context, UserColumns.ISLOGIN,
+					DatabaseManager.UserColumns.PHONE, phone);
+			if (loginTag == null && loginTag.equals("")) {
+				loginTag = "0";
+			}
+		}
+		return Integer.parseInt(loginTag);
+	}
+
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/root_view_style"
+              android:orientation="vertical">
+
+    <RelativeLayout style="@style/layout_width_full">
+
+        <TextView
+            style="@style/item_classification"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/user_base_info"/>
+
+        <CheckBox
+            android:id="@+id/residence_auto"
+            style="@style/layout_wrap"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="@dimen/root_padding_lr"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:button="@drawable/gui_common_btn_radio"
+            android:checked="false"
+            android:text="@string/auto_location"
+            android:textColor="@color/gree_gray"
+            android:textSize="@dimen/text_sub_des_size"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="cityClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/select_city"/>
+
+        <TextView
+            android:id="@+id/residence_city"
+            style="@style/item_right_goto"
+            android:text="@string/city"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout style="@style/item_layout">
+
+        <TextView
+            android:id="@+id/address_info_title"
+            style="@style/item_left_txv"
+            android:layout_marginRight="@dimen/item_ver_diver_margin"
+            android:text="@string/address_info"/>
+
+        <com.gree.greeaccount.widget.EmojiFilterEditText
+            android:id="@+id/residence_address"
+            style="@style/txv"
+            android:layout_width="match_parent"
+            android:layout_toRightOf="@id/address_info_title"
+            android:background="@null"
+            android:maxLength="100"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+package com.gree.greeaccountlib.util;
+
+import java.lang.reflect.Method;
+
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.telephony.TelephonyManager;
+import android.util.Log;
+
+public class SystemServiceUtil {
+	public static String TAG = "SystemServiceUtil.java";
+
+	// get IMEI
+	public static String getIMEI(Context context) {
+		return ((TelephonyManager) context
+				.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+	}
+
+	/**
+	 * 
+	 * getSerialNumber
+	 * 
+	 * @return result is same to getSerialNumber1()
+	 */
+	// get SerialNumber(DeviceId)
+	public static String getSerialNumber() {
+		String serial = null;
+		try {
+			Class<?> c = Class.forName("android.os.SystemProperties");
+			Method get = c.getMethod("get", String.class);
+			serial = (String) get.invoke(c, "ro.serialno");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Log.i(TAG, "DeviceId : " + serial);
+		return serial;
+	}
+
+	// get WifiMac
+	public static String getMacAddress(Context context) {
+		String result = "";
+		WifiManager wifiManager = (WifiManager) context
+				.getSystemService(Context.WIFI_SERVICE);
+		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+		result = wifiInfo.getMacAddress();
+		Log.i(TAG, "MacAddress : " + result);
+		return result;
+	}
+
+	// get ICCID
+	public static String getSimSerialNumber(Context context) {
+
+		return ((TelephonyManager) context.getSystemService(
+
+		Context.TELEPHONY_SERVICE)).getSimSerialNumber();
+
+	}
+
+	// get Model
+	public static String getPhoneModel() {
+		Log.i(TAG, "Phone Model : " + android.os.Build.MODEL);
+		return android.os.Build.MODEL;
+	}
+
+	// 检查某个应用是否安装
+	public static boolean checkAPP(Context context, String packageName) {
+		if (packageName == null || "".equals(packageName))
+			return false;
+		try {
+			ApplicationInfo info = context.getPackageManager()
+					.getApplicationInfo(packageName,
+							PackageManager.GET_UNINSTALLED_PACKAGES);
+			return true;
+		} catch (NameNotFoundException e) {
+			return false;
+		}
+	}
+
+}

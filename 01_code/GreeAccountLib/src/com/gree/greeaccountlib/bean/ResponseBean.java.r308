@@ -1,0 +1,307 @@
+package com.gree.greeaccountlib.bean;
+
+import java.io.Serializable;
+
+public class ResponseBean implements Serializable {
+
+	private String Code;
+	private String Msg;
+	private String Name;
+	private String Password;
+	private String Token;
+	private String MobilePhoneVerified;
+	private String Phone;
+	private String EmailVerified;
+	private String Email;
+	private String UserId;// 相当于接口中的id
+	private String CreateTime;
+	private String UpdateTime;
+	private String RequsetId;
+	private String GKey;
+	private String OpenUserId;
+	private String isLogin;// 0：未登录；1：登录
+
+	/**
+	 * @return the code
+	 */
+	public String getCode() {
+		return Code;
+	}
+
+	/**
+	 * @param code
+	 *            the code to set
+	 */
+	public void setCode(String code) {
+		Code = code;
+	}
+
+	/**
+	 * @return the msg
+	 */
+	public String getMsg() {
+		return Msg;
+	}
+
+	/**
+	 * @param msg
+	 *            the msg to set
+	 */
+	public void setMsg(String msg) {
+		Msg = msg;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return Name;
+	}
+
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(String name) {
+		Name = name;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return Password;
+	}
+
+	/**
+	 * @param password
+	 *            the password to set
+	 */
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+	/**
+	 * @return the token
+	 */
+	public String getToken() {
+		return Token;
+	}
+
+	/**
+	 * @param token
+	 *            the token to set
+	 */
+	public void setToken(String token) {
+		Token = token;
+	}
+
+	/**
+	 * @return the mobilePhoneVerified
+	 */
+	public String getMobilePhoneVerified() {
+		return MobilePhoneVerified;
+	}
+
+	/**
+	 * @param mobilePhoneVerified
+	 *            the mobilePhoneVerified to set
+	 */
+	public void setMobilePhoneVerified(String mobilePhoneVerified) {
+		MobilePhoneVerified = mobilePhoneVerified;
+	}
+
+	/**
+	 * @return the phone
+	 */
+	public String getPhone() {
+		return Phone;
+	}
+
+	/**
+	 * @param phone
+	 *            the phone to set
+	 */
+	public void setPhone(String phone) {
+		Phone = phone;
+	}
+
+	/**
+	 * @return the emailVerified
+	 */
+	public String getEmailVerified() {
+		return EmailVerified;
+	}
+
+	/**
+	 * @param emailVerified
+	 *            the emailVerified to set
+	 */
+	public void setEmailVerified(String emailVerified) {
+		EmailVerified = emailVerified;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return Email;
+	}
+
+	/**
+	 * @param email
+	 *            the email to set
+	 */
+	public void setEmail(String email) {
+		Email = email;
+	}
+
+	/**
+	 * @return the userId
+	 */
+	public String getUserId() {
+		return UserId;
+	}
+
+	/**
+	 * @param userId
+	 *            the userId to set
+	 */
+	public void setUserId(String userId) {
+		UserId = userId;
+	}
+
+	/**
+	 * @return the createTime
+	 */
+	public String getCreateTime() {
+		return CreateTime;
+	}
+
+	/**
+	 * @param createTime
+	 *            the createTime to set
+	 */
+	public void setCreateTime(String createTime) {
+		CreateTime = createTime;
+	}
+
+	/**
+	 * @return the updateTime
+	 */
+	public String getUpdateTime() {
+		return UpdateTime;
+	}
+
+	/**
+	 * @param updateTime
+	 *            the updateTime to set
+	 */
+	public void setUpdateTime(String updateTime) {
+		UpdateTime = updateTime;
+	}
+
+	/**
+	 * @return the requsetId
+	 */
+	public String getRequsetId() {
+		return RequsetId;
+	}
+
+	/**
+	 * @param requsetId
+	 *            the requsetId to set
+	 */
+	public void setRequsetId(String requsetId) {
+		RequsetId = requsetId;
+	}
+
+	/**
+	 * @return the gKey
+	 */
+	public String getGKey() {
+		return GKey;
+	}
+
+	/**
+	 * @param gKey
+	 *            the gKey to set
+	 */
+	public void setGKey(String gKey) {
+		GKey = gKey;
+	}
+
+	/**
+	 * @return the openUserId
+	 */
+	public String getOpenUserId() {
+		return OpenUserId;
+	}
+
+	/**
+	 * @param openUserId
+	 *            the openUserId to set
+	 */
+	public void setOpenUserId(String openUserId) {
+		OpenUserId = openUserId;
+	}
+
+	/**
+	 * @return the isLogin
+	 */
+	public String getIsLogin() {
+		return isLogin;
+	}
+
+	/**
+	 * @param isLogin
+	 *            the isLogin to set
+	 */
+	public void setIsLogin(String isLogin) {
+		this.isLogin = isLogin;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+
+		StringBuffer str = new StringBuffer();
+		str.append("Code :" + Code);
+		str.append(",\n");
+		str.append("Msg :" + Msg);
+		str.append(",\n");
+		str.append("Name :" + Name);
+		str.append(",\n");
+		str.append("Password :" + Password);
+		str.append(",\n");
+		str.append("Token :" + Token);
+		str.append(",\n");
+		str.append("MobilePhoneVerified :" + MobilePhoneVerified);
+		str.append(",\n");
+		str.append("Phone :" + Phone);
+		str.append(",\n");
+		str.append("EmailVerified :" + EmailVerified);
+		str.append(",\n");
+		str.append("Email :" + Email);
+		str.append(",\n");
+		str.append("UserId :" + UserId);
+		str.append(",\n");
+		str.append("CreateTime :" + CreateTime);
+		str.append(",\n");
+		str.append("UpdateTime :" + UpdateTime);
+		str.append(",\n");
+		str.append("RequsetId :" + RequsetId);
+		str.append(",\n");
+		str.append("GKey :" + GKey);
+		str.append(",\n");
+		str.append("OpenUserId :" + OpenUserId);
+		str.append(",\n");
+		str.append("isLogin :" + isLogin);
+
+		return str.toString();
+	}
+}

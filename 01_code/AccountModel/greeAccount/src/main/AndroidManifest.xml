@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gree.greeaccount">
+
+    <uses-permission android:name="com.gree.provider.account.user.write" />
+    <uses-permission android:name="com.gree.provider.account.user.read" />
+    <uses-permission android:name="com.gree.provider.account.address.write" />
+    <uses-permission android:name="com.gree.provider.account.address.read" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/gree_app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.gree.greeaccount.activity.AlertNoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gree.greeaccount.activity.FirstActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gree.greeaccount.activity.LoginActivity"
+            android:label="@string/login_gree_account"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.gree.greeaccount.activity.LoginProblemActivity"
+            android:label="@string/login_register_width_problem"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gree.greeaccount.activity.AccountAppealActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gree.greeaccount.activity.RegisterActivity"
+            android:label="@string/register_gree_account"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.gree.greeaccount.activity.RegisterConfirmActivity"
+            android:label="@string/pwd_set"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.gree.greeaccount.activity.FindPwdByPhoneActivity"
+            android:label="@string/problem_find_pwd"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.gree.greeaccount.activity.FindPwdByPhoneConfirmActivity"
+            android:label="@string/pwd_set"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.gree.greeaccount.activity.UserNoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gree.greeaccount.activity.FindPwdByEmailActivity"
+            android:label="@string/problem_find_pwd"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+    </application>
+
+</manifest>

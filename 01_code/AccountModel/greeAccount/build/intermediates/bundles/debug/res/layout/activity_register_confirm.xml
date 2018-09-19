@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <com.gree.greeaccount.widget.PasswdEditView
+        android:id="@+id/pwd_edt"
+        style="@style/edt_layout"
+        android:layout_marginTop="@dimen/root_padding_top_least" />
+
+    <com.gree.greeaccount.widget.PasswdEditView
+        android:id="@+id/pwd_confm_edt"
+        style="@style/edt_layout" />
+
+    <TextView
+        style="@style/txt_sub_des_with_dot"
+        android:layout_marginTop="@dimen/dot_first_margintop"
+        android:text="@string/pwd_type" />
+
+    <TextView
+        style="@style/txt_sub_des_with_dot"
+        android:text="@string/pwd_lenght" />
+
+    <TextView
+        style="@style/txt_sub_des_with_dot"
+        android:text="@string/device_name_relu2" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="registerClick"
+        android:text="@string/next_step" />
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/update_pwd_title_margintop"
+        android:text="@string/input_bind_email"
+        android:textColor="@color/gree_gray"
+        android:textSize="@dimen/text_des_size" />
+
+    <com.gree.greeaccount.widget.EmojiFilterEditText
+        android:id="@+id/register_email_et"
+        style="@style/edit"
+        android:layout_marginTop="@dimen/update_pwd_title_marginbottom"
+        android:hint="@string/input_email"
+        android:inputType="textEmailAddress" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="nextClick"
+        android:text="@string/send" />
+
+</LinearLayout>

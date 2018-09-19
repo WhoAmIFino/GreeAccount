@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_actionbar_title_size">22.8sp</dimen>
+    <dimen name="text_content_title_szie">30sp</dimen>
+    <dimen name="dialog_title_size">20.4sp</dimen>
+    <dimen name="text_size">19.2sp</dimen>
+    <dimen name="text_edit_content_size">18sp</dimen>
+    <dimen name="text_dialog_title_size">18sp</dimen>
+    <dimen name="text_sub_title_size">16.8sp</dimen>
+    <dimen name="text_menu_size">15.6sp</dimen>
+    <dimen name="text_des_size">15.6sp</dimen>
+    <dimen name="text_sub_des_size">14.4sp</dimen>
+    <dimen name="text_sms_code_text_size">13.2sp</dimen>
+    <dimen name="provision_common_title_marginbottom">42dp</dimen>
+
+    <dimen name="root_padding_lr">16.8dp</dimen>
+    <dimen name="btn_corners">8.4dp</dimen>
+    <dimen name="btn_margin_lr">50.4dp</dimen>
+    <dimen name="btn_margin_bottom">13.2dp</dimen>
+    <dimen name="first_btn_margin">24dp</dimen>
+    <dimen name="edt_margintop">24dp</dimen>
+    <dimen name="edt_padding">8dp</dimen>
+    <dimen name="btn_padding">8dp</dimen>
+    <dimen name="root_padding_top_least">26.4dp</dimen>
+
+    <!--alert notice-->
+    <dimen name="alert_notice_title_margintop">132dp</dimen>
+    <dimen name="alert_notice_title_marginbottom">42dp</dimen>
+    <dimen name="alert_notice_item_marginbottom">19.2dp</dimen>
+
+    <!--first-->
+    <dimen name="first_title_margin_top">85.2dp</dimen>
+    <dimen name="first_title_margin_bottom">42dp</dimen>
+    <dimen name="first_icon_margin_left">75dp</dimen>
+    <dimen name="first_icon_margin_right">36dp</dimen>
+    <dimen name="first_item_des_margintop">10.8dp</dimen>
+    <dimen name="first_item_padding">18dp</dimen>
+
+    <!--register-->
+    <dimen name="checkbox_margintop">16.8dp</dimen>
+    <dimen name="edt_btn_margin_lr">10.8dp</dimen>
+    <dimen name="dot_draw_padding">9.6dp</dimen>
+    <dimen name="dot_margintop">6dp</dimen>
+    <dimen name="dot_first_margintop">14.4dp</dimen>
+
+    <!--problem-->
+    <dimen name="item_padding">13dp</dimen>
+    <dimen name="update_pwd_title_margintop">40.8dp</dimen>
+    <dimen name="update_pwd_title_marginbottom">14.4dp</dimen>
+
+    <!--main-->
+    <dimen name="head_wh">78dp</dimen>
+    <dimen name="head_margin_left">33.6dp</dimen>
+    <dimen name="head_margin_right">24dp</dimen>
+    <dimen name="head_item_padding">12dp</dimen>
+    <dimen name="main_item_draw_padding">14.4dp</dimen>
+    <dimen name="main_item_des_height">27.6dp</dimen>
+    <dimen name="main_alert_height">38.4dp</dimen>
+
+    <dimen name="user_info_item_right_draw_padding">4.8dp</dimen>
+    <dimen name="item_ver_diver_margin">19.2dp</dimen>
+    <dimen name="real_auth_dot_margin">15.6dp</dimen>
+    <dimen name="dialog_title_margin">30dp</dimen>
+    <dimen name="dialog_content_margin">16.8dp</dimen>
+
+    <!--phone emali view-->
+    <dimen name="view_icon_margintop">147.6dp</dimen>
+    <dimen name="view_icon_marginbottom">51.6dp</dimen>
+    <dimen name="view_des_margintop">8.4dp</dimen>
+    <dimen name="view_info_marginleft">120dp</dimen>
+
+    <dimen name="city_select_h">360dp</dimen>
+</resources>

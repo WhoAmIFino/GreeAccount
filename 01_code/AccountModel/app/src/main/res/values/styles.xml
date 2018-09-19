@@ -1,0 +1,37 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+        <item name="android:homeAsUpIndicator">@drawable/ic_nav_back</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:colorPrimary">@color/actionbar_bg</item>
+        <item name="android:colorPrimaryDark">@color/actionbar_bg</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:actionBarStyle">@style/Theme.ActionBar</item>
+        <item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>
+        <item name="android:textAppearance">@style/MyTextStyle</item>
+    </style>
+
+    <style name="MyTextStyle" parent="android:style/TextAppearance.Material">
+        <!--
+        <item name="android:typeface">qh50</item>
+        -->
+    </style>
+
+    <style name="MenuTextStyle">
+        <item name="android:textSize">@dimen/text_menu_size</item>
+    </style>
+
+    <style name="Theme.ActionBar" parent="@android:style/Widget.Material.ActionBar.Solid">
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+    </style>
+
+    <style name="ActionBarTitle" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/gree_black</item>
+        <item name="android:textSize">@dimen/text_actionbar_title_size</item>
+    </style>
+
+</resources>

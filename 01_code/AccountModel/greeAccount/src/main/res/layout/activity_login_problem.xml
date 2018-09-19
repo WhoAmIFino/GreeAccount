@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="findPwdClick">
+
+        <TextView
+            android:id="@+id/problem_find_pwd"
+            style="@style/item_left_txv"
+            android:text="@string/problem_find_pwd" />
+
+        <TextView
+            style="@style/item_des_txv"
+            android:layout_below="@id/problem_find_pwd"
+            android:text="@string/problem_find_pwd_des" />
+
+        <TextView style="@style/item_right_goto" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="problemClick">
+
+        <TextView
+            android:id="@+id/problem_common"
+            style="@style/item_left_txv"
+            android:text="@string/problem_common" />
+
+        <TextView
+            style="@style/item_des_txv"
+            android:layout_below="@id/problem_common"
+            android:text="@string/problem_common_des" />
+
+        <TextView style="@style/item_right_goto" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="appealClick">
+
+        <TextView
+            android:id="@+id/problem_appeal"
+            style="@style/item_left_txv"
+            android:text="@string/problem_appeal" />
+
+        <TextView
+            style="@style/item_des_txv"
+            android:layout_below="@id/problem_appeal"
+            android:text="@string/problem_appeal_des" />
+
+        <TextView style="@style/item_right_goto" />
+    </RelativeLayout>
+
+</LinearLayout>

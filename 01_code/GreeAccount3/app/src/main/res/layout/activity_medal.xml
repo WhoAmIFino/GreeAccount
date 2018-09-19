@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+
+    <RelativeLayout style="@style/item_layout">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:drawableLeft="@drawable/ic_list_certification"
+            android:text="@string/real_name_auth" />
+
+        <TextView
+            android:id="@+id/medal_auth"
+            style="@style/item_right_goto"
+            android:drawableRight="@null"
+            android:text="@string/no_bind" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/item_layout">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:drawableLeft="@drawable/ic_list_mailbox"
+            android:text="@string/bind_e_email" />
+
+        <TextView
+            android:id="@+id/medal_email"
+            style="@style/item_right_goto"
+            android:drawableRight="@null"
+            android:text="@string/no_bind" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/item_layout">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:drawableLeft="@drawable/ic_list_phone_3rows"
+            android:text="@string/bind_e_phone" />
+
+        <TextView
+            android:id="@+id/medal_phone"
+            style="@style/item_right_goto"
+            android:drawableRight="@null"
+            android:text="@string/no_bind" />
+    </RelativeLayout>
+
+</LinearLayout>

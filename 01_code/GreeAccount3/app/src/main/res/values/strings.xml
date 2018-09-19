@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="greeaccount_read_permission">com.gree.provider.account.user.read</string>
+    <string name="greeaccount_write_permission">com.gree.provider.account.user.write</string>
+    <string name="address_write_permission">com.gree.provider.account.address.write</string>
+    <string name="address_read_permission">com.gree.provider.account.address.read</string>
+    <string name="api_permission">com.gree.greeaccount.api</string>
+
+    <string name="app_name">格力账号</string>
+    <string name="cancel">取消</string>
+    <string name="agree">同意</string>
+    <string name="login">登录</string>
+    <string name="confim">确定</string>
+    <string name="send">发送</string>
+    <string name="register">注册</string>
+    <string name="ok">完成</string>
+    <string name="next_step">下一步</string>
+    <string name="male_text">男</string>
+    <string name="female_text">女</string>
+    <string name="net_error">异常</string>
+    <string name="grally_error">图库不可用</string>
+    <string name="camera_error">相机不可用</string>
+    <string name="no_emoji">不可输入表情符</string>
+    <string name="no_chinese">不可输入中文</string>
+    <string name="max_length">已达到最大长度</string>
+    <string name="phone_error">手机号格式不正确</string>
+    <string name="rsp_token_error">认证token无效,请从新登录</string>
+    <string name="rsp_token_invalid">认证信息无效</string>
+    <string name="rsp_sms_error">验证码无效</string>
+    <string name="rsp_account_no_ex">用户不存在</string>
+    <string name="rsp_to_auth_error">身份认证失败</string>
+    <string name="rsp_auth_error">不同用户越权操作</string>
+    <string name="rsp_phone_check_error">手机号验证不一致</string>
+    <string name="rsp_phone_has_bind">手机号被绑定</string>
+    <string name="rsp_token_reflash">刷新令牌无效</string>
+    <string name="rsp_email_has_bind">邮箱被绑定</string>
+    <string name="rsp_account_error">账号信息不一致，无法修改设备昵称</string>
+    <string name="rsp_logout">设备强制退出</string>
+    <string name="rsp_pwd_reset">密码已被重置</string>
+    <string name="rsp_account_name_error">用户名格式不正确</string>
+    <string name="rsp_account_name_only_one">用户名只能修改一次</string>
+    <string name="logout_alert">登录异常提示</string>
+    <string name="logout_alert_content">你的格力账号\"<xliff:g id="account">%1$s</xliff:g>\"于 <xliff:g id="time">%2$s</xliff:g> 已超过登录允许上限。如果这不是你的操作，你的密码很可能已泄漏。请尽快登录格力手机账号修改密码，或通过浏览器访问 http://phone.gree.com ,登录账号进行操作。</string>
+    <string name="logout_num_out_alert_content">你的格力账号\"<xliff:g id="account">%1$s</xliff:g>\"于 <xliff:g id="time">%2$s</xliff:g> 被要求退出登录。如果这不是你的操作，你的密码很可能已泄露。请尽快登录格力手机账号后修改密码，或通过浏览器访问 http://phone.gree.com ,登录账号进行操作。</string>
+    <string name="logout_pwd_reset_alert_content">你的格力账号\"<xliff:g id="account">%1$s</xliff:g>\"于 <xliff:g id="time">%2$s</xliff:g> 密码被修改。如果这不是你的操作，你的密码很可能已泄露。请尽快登录格力手机账号后修改密码，或通过浏览器访问 http://phone.gree.com ,登录账号进行操作。</string>
+    <string name="pwd_reset_alert_content">你的密码已修改</string>
+    <string name="get_auth_code">获取验证码</string>
+    <string name="reget_auth_code">重新获取</string>
+    <string name="permissions_title">程序在运行过程中，需要用到读取短信验证码和获得手机序列号的权限，跳转获取</string>
+    <string name="no_app_active">无对应应用</string>
+
+    <!--alert notice-->
+    <string name="user_agreement">用户协议</string>
+    <string name="alert_notice_item_1">1.本软件使用过程中需要连接网络，产生的流量费用将由运营商之间收取，详情请咨询你所属的运营商。</string>
+    <string name="alert_notice_item_2">2.本软件在使用过程中，在经过你同意的前提下会采集您的地理位置和联系人信息，用于提供更优的生活服务。</string>
+    <string name="alert_notice_item_3">3.使用该软件即表示你同意接受格力用户许可协议和格力隐私政策。</string>
+    <string name="alert_notice_item_3_start">3.使用该软件即表示你同意接受</string>
+    <string name="gree_user_agreement">格力用户许可协议</string>
+    <string name="and">和</string>
+    <string name="gree_privacy_policy">格力隐私政策</string>
+    <string name="date_fomat_year">年</string>
+    <string name="date_fomat_moth">月</string>
+    <string name="date_fomat_day">日</string>
+
+    <!--first-->
+    <string name="first_title">登录账号可享受更多服务</string>
+    <string name="first_gree_cloud">格力云</string>
+    <string name="first_gree_cloud_des">即将上线...</string>
+    <string name="first_gree_findphone">查找手机</string>
+    <string name="first_gree_findphone_des">手机丢失远程锁机</string>
+    <string name="first_gree_feedback">售后服务</string>
+    <string name="first_gree_feedback_des">手机售后问题专人服务</string>
+    <string name="first_gree_bbs">格力论坛</string>
+    <string name="first_gree_bbs_des">掌握最新格力手机资讯</string>
+
+    <!--register-->
+    <string name="password_rule">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="account_name_rule">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="register_gree_account">注册格力账号</string>
+    <string name="input_phone">输入手机号</string>
+    <string name="input_email">输入邮箱号</string>
+    <string name="input_account">手机号码/邮箱号/用户名</string>
+    <string name="has_read_agree_agreement">我已阅读并同意</string>
+    <string name="user_register_agreement">用户注册协议</string>
+    <string name="input_sms_code">输入验证码</string>
+    <string name="get_sms_code">获取验证码</string>
+    <string name="pwd_set">密码设置</string>
+    <string name="pwd_type">为提高账号安全，请混合使用字母、数字、符号</string>
+    <string name="pwd_lenght">密码长度需要6-30位字符</string>
+    <string name="input_pwd">输入密码</string>
+    <string name="reigster_problem">注册遇到问题</string>
+    <string name="has_registered">账号已注册</string>
+    <string name="no_registered">账号未注册</string>
+    <string name="confim_pwd">再次确认密码</string>
+    <string name="pwd_error">密码格式不正确</string>
+    <string name="pwd_error_to_mush">错误太多，请等待30秒</string>
+    <string name="pwd_error_foget">你可能真的忘记了，休息一下</string>
+    <string name="confim_pwd_error">确认密码不正确</string>
+    <string name="sms_code_error">验证码格式不正确</string>
+    <string name="agree_the_agreement">请勾选用户注册协议</string>
+    <string name="login_gree_account">登录格力账号</string>
+    <string name="login_register_width_problem">登录/注册遇到问题</string>
+    <string name="login_width_problem">登录遇到问题?</string>
+
+    <!--update pwd-->
+    <string name="input_new_pwd">请输入新密码</string>
+    <string name="input_bind_phone">请输入绑定的手机号</string>
+    <string name="find_pwd_by_email">邮箱找回密码</string>
+    <string name="input_bind_email">请输入绑定的邮箱号</string>
+    <string name="email_error">邮箱格式不正确</string>
+    <string name="email_send_ok_title">激活通知</string>
+    <string name="email_send_ok_tip_start">我们已向邮箱“</string>
+    <string name="email_send_ok_tip">我们已向邮箱“<xliff:g id="email">%1$s</xliff:g>”发送了一封验证邮件。点击邮件链接即可验证.</string>
+    <string name="i_know">知道了</string>
+    <string name="find_pwd_by_phone">使用手机找回</string>
+
+    <!--problem-->
+    <string name="problem_find_pwd">找回密码</string>
+    <string name="problem_find_pwd_des">通过绑定账号的安全资料找回</string>
+    <string name="problem_common">常见问题</string>
+    <string name="problem_common_des">提供常见问题及问题反馈</string>
+    <string name="problem_appeal">账号申诉</string>
+    <string name="problem_appeal_des">解决无法找回密码或账号异常等问题</string>
+    <string name="faceback_error">请检测售后服务应用是否存在</string>
+
+    <!--main-->
+    <string name="no_nickname">未填写昵称</string>
+    <string name="gree_service">格力服务</string>
+    <string name="account_set">账号设置</string>
+    <string name="user_info">个人信息</string>
+    <string name="login_manager">登录管理</string>
+    <string name="account_safe">账号安全</string>
+    <string name="other">其他</string>
+    <string name="set">设置</string>
+    <string name="logout">退出账号</string>
+    <string name="foget_pwd">忘记密码</string>
+    <string name="pwd_not_right">密码错误</string>
+    <string name="pwd_enter_right">请输入正确密码</string>
+    <string name="pwd">密码</string>
+    <string name="input_account_pwd">请输入账号密码</string>
+    <string name="nick_shield">被屏蔽</string>
+
+    <string name="alert_clound_error">提供更好的数据保护，请你开启格力云，点击开启</string>
+    <string name="alert_findphone_error">丢失手机怎么办？找查找手机功能帮到您，点击开启</string>
+    <string name="alert_nickname_error">您还没有昵称，论坛的新朋友会不认识你，点击设置</string>
+    <string name="alert_name_error">账号名称还没有呢！快点点击设置吧</string>
+    <string name="alert_head_error">和别人不一样，要有头有面，快点点击设置</string>
+    <string name="alert_userinfo_error">您的资料还没有完善，点击设置</string>
+    <string name="alert_auth_error">您还没有实名认证，点击设置</string>
+    <string name="alert_email_error">绑定安全邮箱，可以帮助你更好保护账号，点击设置</string>
+    <string name="alert_login_error">警惕！您的账号在别的设备上登录，点击查看详细</string>
+    <string name="alert_nick_auth">昵称在使用敏感字，被举报或论坛管理者屏蔽</string>
+    <string name="alert_head_auth">头像在使用敏感图片，被举报或论坛管理者屏蔽</string>
+
+    <!--userinfo-->
+    <string name="account_info">账号信息</string>
+    <string name="account_name">账号名</string>
+    <string name="account_name_error">账号名格式不正确</string>
+    <string name="medal">勋章</string>
+    <string name="user_base_info">基本信息</string>
+    <string name="nick_name">昵称</string>
+    <string name="sex">性别</string>
+    <string name="birthday">生日</string>
+    <string name="residence">居住地</string>
+    <string name="no_edit">未填写</string>
+    <string name="no_get">未领取</string>
+    <string name="medal_num">个</string>
+    <string name="edt_head">编辑头像</string>
+    <string name="taking_pictures">拍照</string>
+    <string name="from_grally">从图库中选择</string>
+    <string name="no_select">未选择</string>
+    <string name="select_plac">选择地区</string>
+    <string name="select_sex">请选择性别</string>
+    <string name="account_name_des_1">格力账号名可用于登录和申诉，只能设置一次</string>
+    <string name="account_name_des_2">账号名设置长度6-30字母符</string>
+    <string name="nick_name_des_1">昵称长度3-30个字母符，2-15汉字</string>
+    <string name="nick_name_des_2">昵称三个月只能改一次</string>
+    <string name="nick_name_hint">请输入昵称</string>
+    <string name="nick_name_error">昵称格式不正确</string>
+    <string name="birthday_error">生日不可大于当前日期</string>
+
+    <string name="auto_location_failue">定位失败</string>
+    <string name="please_select">请选择</string>
+    <string name="residence_error">地址信息不完整</string>
+    <string name="auto_location_prmis">自动定位将要获取你的位置信息权限，点击确定跳转</string>
+    <string name="save">保存</string>
+
+    <string name="auto_location">自动定位</string>
+    <string name="address_select">手动选择</string>
+    <string name="select_city">选择地区</string>
+    <string name="city">省/市/区</string>
+    <string name="address_info">详细地区</string>
+    <string name="detail_info">详细描述</string>
+
+    <!--medal-->
+    <string name="real_name_auth">实名认证</string>
+    <string name="bind_e_email">绑定电子邮箱</string>
+    <string name="bind_e_phone">绑定手机设备</string>
+    <string name="no_bind">未领取</string>
+    <string name="has_bind">已有</string>
+
+    <!--set-->
+    <string name="check_version">检查更新</string>
+    <string name="download_app">下载更新</string>
+    <string name="FAQ">常见问题</string>
+    <string name="version">格力账号\nv</string>
+
+    <!--devices-->
+    <string name="devices_title">设备列表</string>
+    <string name="device_des">这里显示你的账号登录过的设备，最多允许同时登录5个设备，超过即退出最早登录设备。</string>
+    <string name="current_device">当前设备</string>
+    <string name="login_time">登录时间&#160;&#160;</string>
+    <string name="logout_time">退出时间&#160;&#160;</string>
+    <string name="device_name_error">名称格式不正确</string>
+
+    <!--safe-->
+    <string name="have_not_bind">未绑定</string>
+    <string name="bind_manager">绑定管理</string>
+    <string name="bind_phone">绑定手机</string>
+    <string name="bind_email">绑定邮箱</string>
+    <string name="pwd_manager">密码管理</string>
+    <string name="update_pwd">修改密码</string>
+    <string name="find_pwd">找回密码</string>
+    <string name="auth_type">认证方式</string>
+    <string name="real_auth">实名认证</string>
+    <string name="no_auth">未认证</string>
+    <string name="real_name">真实姓名</string>
+    <string name="documents_type">证件类型</string>
+    <string name="documents_num">证件号码</string>
+    <string name="doc_shenfenzheng">身份证</string>
+    <string name="documents_type_error">证件类型不可为空</string>
+    <string name="documents_num_error">证件号码不可为空</string>
+    <string name="real_name_error">真实姓名不可为空</string>
+    <string name="doc_g_a_t_jiumingneidi">港澳台居民内地通行证</string>
+    <string name="doc_g_a_t_shenfenzheng">港澳台身份证</string>
+    <string name="doc_huzhao">护照</string>
+    <string name="doc_junren_jincha">军人证/警察身份证</string>
+    <string name="auth_req_success">恭喜，你已提交成功</string>
+    <string name="authing">审核中</string>
+    <string name="auth_success">审核通过</string>
+    <string name="has_auth">已认证</string>
+    <string name="auth_error">未通过</string>
+    <string name="auth_failue">审核不通过，请检测后再次提交</string>
+    <string name="subim_two">再次提交</string>
+    <string name="real_auth_safe_tips">我们将依法保护您的个人信息安全</string>
+
+
+
+    <!--real auth-->
+    <string name="real_auth_des_1">根据移动互联网应用程序信息服务管理规定，需要用户进行身份信息认证，我们承诺将严格保护您的个人信息，不会对外泄露；</string>
+    <string name="real_auth_des_2">实名认证后可用于账号申诉；</string>
+    <string name="real_auth_des_3">注册信息只提交一次，不可修改，请慎重填写。</string>
+
+    <!--phone view-->
+    <string name="phone_view_des">用于登录、重置密码和验证身份</string>
+    <string name="update_bind">修改绑定</string>
+    <string name="phone_check_title">将发送短信至手机号&#160;&#160;&#160;</string>
+    <string name="phone_check_des">手机号已停用，需要账号申诉？</string>
+    <string name="email_view_des">此邮箱可用于登录账号，找回密码</string>
+    <string name="input_safe_email">输入安全邮箱</string>
+    <string name="sms_code_title">短信验证码</string>
+    <string name="bind_safe_email">绑定安全邮箱</string>
+
+    <string name="old_pwd">原密码</string>
+    <string name="new_pwd">新密码</string>
+
+    <!--sys apks version-->
+    <string name="net_error_check_version">获取版本失败</string>
+    <string name="net_error_get_apkurl">获取下载地址失败</string>
+    <string name="apks_loaddown_state">正在下载</string>
+    <string name="apks_version_tips">检测到新版本，请确定是否更新?</string>
+    <string name="apks_version_tips_title">更新提示</string>
+    <string name="apks_version_tips_btn_confirm">确定</string>
+    <string name="apks_version_tips_btn_cancel">取消</string>
+    <string name="apks_version_tips_btn_down">下载更新</string>
+    <string name="apks_newversion">新版本</string>
+    <string name="apks_file_size">文件大小</string>
+    <string name="newest_version_tips">当前已是最新版本</string>
+
+    <!--deivce info-->
+    <string name="attention">注意</string>
+    <string name="device_att_des">如果您无法识别此设备，并认为有可能他人使用你账号访问，请退出账号并修改密码。</string>
+    <string name="device_logout_alert">此操作将使对应设备的账号自动退出，是否继续？</string>
+    <string name="device_name">设备名称&#160;&#160;&#160;</string>
+    <string name="device_type">设备型号&#160;&#160;&#160;</string>
+    <string name="device_gps">登录位置&#160;&#160;&#160;</string>
+    <string name="device_login_time">登录时间&#160;&#160;&#160;</string>
+    <string name="device_logout_time">退出时间&#160;&#160;&#160;</string>
+    <string name="refactor">重命名</string>
+    <string name="device_name_relu">名称长度1-10字汉字或2-20字母</string>
+    <string name="device_name_relu2">不能使用空白格及emoji表情图标</string>
+
+    <string name="net_error_get_ccid">获得实名认证信息</string>
+    <string name="net_error_deviceLogout">强制退出</string>
+    <string name="net_error_updateDeviceName">更改设备名</string>
+    <string name="net_error_delAddress">删除地址</string>
+    <string name="net_error_updateAddress">修改地址</string>
+    <string name="net_error_updateResidence">修改居住地</string>
+    <string name="net_error_loginOut">退出</string>
+    <string name="net_error_restEmail">修改邮箱</string>
+    <string name="net_error_restPhone">修改手机号码</string>
+    <string name="net_error_reflashToken">刷新令牌</string>
+    <string name="net_error_upLoadHead">上传头像</string>
+    <string name="net_error_UpdateUserBaseInfo">修改用户信息</string>
+
+    <string name="net_error_getUserInfo">获取用户信息</string>
+    <string name="net_error_restPwd">修改密码</string>
+    <string name="net_error_checkPhoneRegister">验证手机是否注册</string>
+    <string name="net_error_findPwdByEmail">根据邮箱找回密码</string>
+    <string name="net_error_findPwdByPhone">根据手机找回密码</string>
+    <string name="net_error_login">登录</string>
+    <string name="net_error_register">注册</string>
+    <string name="net_error_checkSmsCode">验证验证码</string>
+    <string name="net_error_reqSmsCode">获取短信验证码</string>
+
+    <string name="gree_user_protocols_title">格力用户协议</string>
+    <!-- 用户协议 -->
+    <string name="gree_user_protocols_content">
+        <Data><![CDATA[<h1 style="text-align:center;width:100%">格力用户注册协议</h1>
+请务必认真阅读和理解本《用户注册协议》（以下简称《协议》）中规定的所有权利和限制。除非您接受本《协议》条款，否则您无权注册、登录或使用本协议所涉及的相关服务。您一旦注册、登录、使用或以任何方式使用本《协议》所涉及的相关服务的行为将视为对本《协议》的接受，即表示您同意接受本《协议》各项条款的约束。如果您不同意本《协议》中的条款，请不要注册、登录或使用本《协议》相关服务。 本《协议》是用户与珠海格力电器股份有限公司（以下简称“格力”）之间的法律协议。
+<br/>
+<br/><b>1. 服务内容</b>
+<br/>1.1 格力网站网络服务的具体内容由格力根据实际情况提供，包括但不限于格力开放平台、应用商店等企业服务、游戏、论坛等。
+<br/>1.2 用户理解并接受，格力仅提供相关的网络服务，除此之外与相关网络服务有关的设备（如个人电脑、手机、及其他与接入互联网或移动互联网有关的装置）及所需的费用（如为接入互联网而支付的电话费及上网费、为使用移动网而支付的手机费）均应由用户自行负担。
+<br/>1.3 用户应输入帐号和密码登录格力帐户。为了给您提供更便捷的登录服务，如果您使用手机通过格力帐户已登录了一款格力应用软件时，可直接一键登录本机其他格力应用软件。
+<br/>1.4 除了格力提供的软件和服务，您还可以用格力帐号登录使用格力合作伙伴的相关服务。
+<br/>
+<br/><b>2.账号和密码</b>
+<br/>2.1 您一旦注册成功成为用户，您将得到一个密码和帐号，您需要对自己在帐户中的所有活动和事件负全责。如果由于您的过失导致您的帐号和密码脱离您的控制，则由此导致的针对您、格力或任何第三方造成的损害，您将承担全部责任。
+<br/>2.2 您有权随时更改密码，您同意若发现任何安全漏洞或非法使用用户账号的情况，您应当立即通知格力。
+<br/>2.3您同意在未经适当授权的情况下，在任何时候均不使用其他成员的账户、用户名或密码。
+<br/>
+<br/><b>3.使用规则</b>
+<br/>3.1 您在使用本服务时，应当遵守相关的法律法规，包括但不限于《中华人民共和国宪法》、《中华人民共和国刑法》、《中华人民共和国民法通则》、《中华人民共和国合同法》、《中华人民共和国著作权法》、《中华人民共和国电信条例》、《互联网信息服务管理办法》、《互联网电子公告服务管理规定》、《中华人民共和国保守国家秘密法》、《中华人民共和国计算机信息系统安全保护条例》、《计算机信息网络国际联网安全保护管理办法》、《全国人民代表大会常务委员会关于维护互联网安全的决定》及其相关的司法解释
+<br/>3.2 您在使用本服务的过程中，必须遵守以下原则：
+<br/>3.2.1 遵守所有与网络服务有关的网络协议、规定和程序；
+<br/>3.2.2 不得进行任何可能对互联网的正常运转造成不利影响的行为；
+<br/>3.2.3 不得为任何非法目的或为任何商业目的而使用本服务；
+<br/>3.2.4 不得进行任何不利于格力开放平台的行为；
+<br/>3.2.5 不得传输任何骚扰性的、中伤他人的、辱骂性的、恐吓性的、庸俗淫秽的或其他任何非法的信息资料；
+<br/>3.2.6 获得您提交任何资料的合法权利所必要的同意、允许或许可；
+<br/>3.2.7 不传播或者张贴垃圾邮件、不合理巨大的文件、连锁邮件、传销模式、病毒或者其他可能损害本服务或者本服务使用人利益或财产的技术。
+<br/>3.3 您有权根据格力用户的规定使用格力账号提供的相关服务。
+<br/>3.4 如果您在使用过程中注册资料发生变更，则您应当及时更新准确的、详细的注册资料。
+<br/>3.5 您应当对以您的用户账号进行的任何行为承担法律责任，包括但不限于您本人/他人利用您账号和密码所进行的一切行为。如因您未保管好您的账号和密码而给格力及其关联公司、第三方造成损失，您应当进行全额赔偿，并消除影响。
+<br/>3.6 您理解并同意在使用格力账号提供的各项服务时，同意接受格力或第三方提供的各类信息服务。
+<br/>3.7 格力有权根据实际情况中断、变更、终止服务，且格力不需对您或任何第三方承担任何责任。
+<br/>
+<br/><b>4.禁止行为</b>
+<br/>您不得利用格力账号发布或传播敏感信息和违反国家法律法规、政策的信息，包括但不限于下列信息：
+<br/>4.1 违反宪法确定的基本原则的；
+<br/>4.2 危害国家统一、主权和领土完整的；
+<br/>4.3 泄露国家秘密、危害国家安全或者损害国家荣誉和利益的；
+<br/>4.4 煽动民族仇恨、民族歧视，破坏民族团结，或者侵害民族风俗、习惯的；
+<br/>4.5 宣扬邪教、迷信的；
+<br/>4.6 散布谣言，扰乱社会秩序，破坏社会稳定的；
+<br/>4.7 宣扬淫秽、赌博、暴力或者教唆犯罪的；
+<br/>4.8侮辱或者诽谤他人，侵害他人合法权益的；
+<br/>4.9危害社会公德或者民族优秀文化传统的；
+<br/>4.10有法律、行政法规和国家规定禁止的其他内容的。
+<br/>
+<br/><b>5. 服务变更、中断或终止</b>
+<br/>5.1 鉴于网络服务的特殊性，用户同意格力有权根据业务发展情况随时变更、中断或终止部分或全部的网络服务而无需通知用户，也无需对任何用户或任何第三方承担任何责任；
+<br/>5.2 用户理解，格力需要定期或不定期地对提供网络服务的平台（如互联网网站、移动网络等）或相关的设备进行检修或者维护，如因此类情况而造成网络服务在合理时间内的中断，格力无需为此承担任何责任，但格力应尽可能事先进行通告。
+<br/>5.3 如发生下列任何一种情形，格力有权随时中断或终止向用户提供本《协议》项下的网络服务（包括收费网络服务）而无需对用户或任何第三方承担任何责任：
+<br/>5.3.1 用户提供的个人资料不真实；
+<br/>5.3.2 用户违反本《协议》中规定的使用规则。
+<br/>
+<br/><b>6. 知识产权</b>
+<br/>6.1 格力提供的网络服务中包含的任何文本、图片、图形、音频和/或视频资料均受版权、商标和/或其它财产所有权法律的保护，未经相关权利人同意，上述资料均不得用于任何商业目的。
+<br/>6.2 格力为提供网络服务而使用的任何软件（包括但不限于软件中所含的任何图像、照片、动画、录像、录音、音乐、文字和附加程序、随附的帮助材料）的一切权利均属于该软件的著作权人，未经该软件的著作权人许可，用户不得对该软件进行反向工程（reverse engineer）、反向编译（decompile）或反汇编（disassemble）。
+<br/>
+<br/><b>7. 隐私保护</b>
+<br/>7.1 保护用户隐私是格力的一项基本政策，格力保证不对外公开或向第三方提供单个用户的注册资料及用户在使用网络服务时存储在格力的非公开内容，但下列情况除外：
+<br/>7.1.1 事先获得用户的明确授权；
+<br/>7.1.2 根据有关的法律法规要求；
+<br/>7.1.3 按照相关政府主管部门的要求；
+<br/>7.1.4 按照公安机关、检察院、法院调查的要求；
+<br/>7.1.5 为维护社会公众的利益；
+<br/>7.1.6 为维护格力的合法权益。
+<br/>7.2 格力可能会与第三方合作向用户提供相关的网络服务，在此情况下，如该第三方同意承担与格力同等的保护用户隐私的责任，则格力有权将用户的注册资料等提供给该第三方。
+<br/>7.3 在不透露单个用户隐私资料的前提下，格力有权对整个用户数据库进行分析并对用户数据库进行商业上的利用。
+<br/>7.4 格力制定了以下四项隐私权保护原则，指导我们如何来处理产品中涉及到用户隐私权和用户信息等方面的问题：
+<br/>（1） 利用我们收集的信息为用户提供有价值的产品和服务。
+<br/>（2） 开发符合隐私权标准和隐私权惯例的产品。
+<br/>（3） 将个人信息的收集透明化，并由权威第三方监督。
+<br/>（4） 尽最大的努力保护我们掌握的信息。
+<br/>
+<br/><b>8. 免责声明</b>
+<br/>8.1 格力不担保网络服务一定能满足用户的要求，也不担保网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作担保。
+<br/>8.2 格力不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由格力实际控制的任何网页上的内容，格力不承担任何责任。
+<br/>8.3 对于因电信系统或互联网网络故障、计算机故障或病毒、信息损坏或丢失、计算机系统问题或其它任何不可抗力原因而产生损失，格力不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。
+<br/>
+<br/><b>9. 法律及争议解决</b>
+<br/>9.1 本协议适用中华人民共和国法律。
+<br/>9.2 因本协议引起的或与本协议有关的任何争议，各方应友好协商解决；协商不成的，任何一方均可将有关争议提交至格力所在地有管辖权的人民法院管辖。
+<br/>
+<br/><b>10. 其他条款</b>
+<br/>10.1 如果本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，或违反任何适用的法律，则该条款被视为删除，但本协议的其余条款仍应有效并且有约束力。
+<br/>10.2 格力有权随时根据有关法律、法规的变化以及公司经营状况和经营策略的调整等修改本协议，而无需另行单独通知用户。修改后的协议会在格力网站上公布。用户可随时通过格力网站浏览最新服务协议条款。当发生有关争议时，以最新的协议文本为准。如果不同意格力对本协议相关条款所做的修改，用户有权停止使用网络服务。如果用户继续使用网络服务，则视为用户接受格力对本协议相关条款所做的修改。
+<br/>10.3 格力在法律允许最大范围对本协议拥有解释权与修改权。]]></Data>
+    </string>
+
+</resources>

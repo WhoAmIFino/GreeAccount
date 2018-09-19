@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/root_view_style"
+    android:orientation="vertical"
+    tools:context="com.gree.greeaccount.activity.AlertNoticeActivity">
+
+    <TextView
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/alert_notice_title_marginbottom"
+        android:layout_marginTop="@dimen/alert_notice_title_margintop"
+        android:text="@string/user_agreement"
+        android:textColor="@color/gree_black"
+        android:textSize="@dimen/text_content_title_szie" />
+
+    <TextView
+        style="@style/txv_alert_notice_item"
+        android:text="@string/alert_notice_item_1" />
+
+    <TextView
+        style="@style/txv_alert_notice_item"
+        android:text="@string/alert_notice_item_2" />
+
+    <TextView
+        android:id="@+id/alert_user_agreement"
+        style="@style/txv_alert_notice_item"
+        android:text="@string/alert_notice_item_3" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        style="@style/layout_width_full"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/btn_black"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="cancelClick"
+            android:text="@string/cancel"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/next_btn"
+            style="@style/btn_blue"
+            android:layout_width="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_weight="1"
+            android:onClick="nextClick"
+            android:text="@string/agree"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>

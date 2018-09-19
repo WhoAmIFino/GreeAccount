@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="greeaccount_read_permission">com.gree.provider.account.user.read</string>
+    <string name="greeaccount_write_permission">com.gree.provider.account.user.write</string>
+    <string name="address_write_permission">com.gree.provider.account.address.write</string>
+    <string name="address_read_permission">com.gree.provider.account.address.read</string>
+    <string name="api_permission">com.gree.greeaccount.api</string>
+
+    <string name="gree_app_name">格力賬號</string>
+    <string name="cancel">取消</string>
+    <string name="agree">同意</string>
+    <string name="login">登錄</string>
+    <string name="confim">確定</string>
+    <string name="send">發送</string>
+    <string name="register">注冊</string>
+    <string name="ok">完成</string>
+    <!---->
+    <string name="pwd_reset_complete">完成</string>
+    <!---->
+    <string name="next_step">下一步</string>
+    <string name="male_text">男</string>
+    <string name="female_text">女</string>
+    <string name="net_error">異常</string>
+    <string name="grally_error">圖庫不可用</string>
+    <string name="camera_error">相機不可用</string>
+    <string name="no_emoji">不可輸入表情符</string>
+    <string name="max_length">已達到最大長度</string>
+    <string name="phone_error">手機號格式不正確</string>
+    <string name="rsp_token_error">認證token無效,請從新登錄</string>
+    <string name="rsp_sms_error">驗證碼無效</string>
+    <string name="rsp_account_no_ex">用戶不存在</string>
+    <string name="rsp_to_auth_error">身份認證失敗</string>
+    <string name="rsp_auth_error">不同用戶越權操作</string>
+    <string name="rsp_phone_check_error">手機號驗證不一致</string>
+    <string name="rsp_phone_has_bind">手機號被綁定</string>
+    <string name="rsp_token_reflash">刷新令牌無效</string>
+    <string name="rsp_email_has_bind">郵箱被綁定</string>
+    <string name="rsp_account_error">賬號信息不一致，無法修改設備昵稱</string>
+    <string name="rsp_logout">設備強制退出</string>
+    <string name="rsp_pwd_reset">密碼已被重置</string>
+    <string name="rsp_account_name_error">用戶名格式不正確</string>
+    <string name="rsp_account_name_only_one">用戶名只能修改一次</string>
+    <string name="logout_alert">登錄異常提示</string>
+    <string name="logout_alert_content">你的格力賬號\"<xliff:g id="account">%1$s</xliff:g>\"于 \"<xliff:g id="time">%2$s</xliff:g>\"已超過登錄允許上限。如果這不是你的操作，你的密碼很可能已泄漏。請盡快登錄格力手機賬號修改密碼，或通過浏覽器訪問“phone.gree.com”,登錄賬號後進行操作。</string>
+    <string name="logout_num_out_alert_content">你的格力賬號\"<xliff:g id="account">%1$s</xliff:g>\"于\"<xliff:g id="time">%2$s</xliff:g>\"被要求退出登錄。如果這不是你的操作，你的密碼很可能已泄露。請盡快登錄格力手機賬號後修改密碼，或通過浏覽器訪問“phone.gree.com”,登錄賬號後進行操作。</string>
+    <string name="logout_pwd_reset_alert_content">你的格力賬號\"<xliff:g id="account">%1$s</xliff:g>\"于\"<xliff:g id="time">%2$s</xliff:g>\"密碼被修改。如果這不是你的操作，你的密碼很可能已泄露。請盡快登錄格力手機賬號後修改密碼，或通過浏覽器訪問“phone.gree.com”,登錄賬號後進行操作。</string>
+    <string name="pwd_reset_alert_content">你的密碼已修改</string>
+    <string name="get_auth_code">獲取驗證碼</string>
+    <string name="reget_auth_code">重新獲取</string>
+    <string name="permissions_title">程序在運行過程中，需要用到讀取短信驗證碼和獲得手機序列號的權限，跳轉獲取</string>
+    <string name="no_app_active">無對應應用</string>
+
+    <!--alert notice-->
+    <string name="user_agreement">用戶協議</string>
+    <string name="alert_notice_item_1">1.本軟件使用過程中需要連接網絡，産生的流量費用將由運營商之間收取，詳情請咨詢你所屬的運營商。</string>
+    <string name="alert_notice_item_2">2.本軟件在使用過程中，在經過你同意的前提下會采集您的地理位置和聯系人信息，用于提供更優的生活服務。</string>
+    <string name="alert_notice_item_3">3.使用該軟件即表示你同意接受格力用戶許可協議和格力隱私政策。</string>
+    <string name="alert_notice_item_3_start">3.使用該軟件即表示你同意接受</string>
+    <string name="gree_user_agreement">格力用戶許可協議</string>
+    <string name="and">和</string>
+    <string name="gree_privacy_policy">格力隱私政策</string>
+
+    <!--first-->
+    <string name="first_title">通過登錄賬號可享受更多服務</string>
+    <string name="first_gree_cloud">格力雲</string>
+    <string name="first_gree_cloud_des">手機數據資料同步格力雲</string>
+    <string name="first_gree_findphone">查找手機</string>
+    <string name="first_gree_findphone_des">手機丟失遠程鎖機</string>
+    <string name="first_gree_feedback">售後服務</string>
+    <string name="first_gree_feedback_des">手機售後問題專人服務</string>
+    <string name="first_gree_bbs">格力論壇</string>
+    <string name="first_gree_bbs_des">掌握最新格力手機資訊</string>
+    <string name="first_gree_function_coming">即將上線...</string>
+
+    <!--register-->
+    <string name="password_rule">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="register_gree_account">注冊格力賬號</string>
+    <string name="input_phone">輸入手機號</string>
+    <string name="input_email">輸入郵箱號</string>
+    <string name="bind_phone">綁定手機號</string>
+    <string name="input_account">手機號碼/郵箱號/用戶名</string>
+    <string name="has_read_agree_agreement">我已閱讀並同意</string>
+    <string name="user_register_agreement">用戶注冊協議</string>
+    <string name="input_sms_code">輸入驗證碼</string>
+    <string name="get_sms_code">獲取驗證碼</string>
+    <string name="pwd_set">密碼設置</string>
+    <string name="pwd_type">爲提高賬號安全，請使用字母、數字、符號</string>
+    <string name="pwd_lenght">密碼長度需要6-30位字符</string>
+    <string name="input_pwd">輸入密碼</string>
+    <string name="reigster_problem">注冊遇到問題</string>
+    <string name="has_registered">賬號已注冊</string>
+    <string name="no_registered">賬號未注冊</string>
+    <string name="confim_pwd">再次確認密碼</string>
+    <string name="pwd_error">密碼格式不正確</string>
+    <string name="confim_pwd_error">確認密碼不正確</string>
+    <string name="sms_code_error">驗證碼格式不正確</string>
+    <string name="agree_the_agreement">請勾選用戶注冊協議</string>
+    <string name="login_gree_account">登錄格力賬號</string>
+    <string name="account_name_error">賬號名不可爲空</string>
+    <string name="login_register_width_problem">登錄/注冊遇到問題</string>
+    <string name="login_width_problem">登錄遇到問題?</string>
+    <string name="wifi_not_connent">網絡不可用，是否前往設置WLAN?</string>
+    <string name="gotos">前往</string>
+
+    <!--update pwd-->
+    <string name="input_new_pwd">請輸入新密碼</string>
+    <string name="input_bind_phone">請輸入綁定的手機號</string>
+    <string name="find_pwd_by_email">郵箱找回密碼</string>
+    <string name="input_bind_email">驗證郵件將發送至以下郵箱，進入郵箱後即可找回密碼。</string>
+    <string name="email_error">郵箱格式不正確</string>
+    <string name="email_send_ok_tip_start">我們已向郵箱“</string>
+    <string name="email_send_ok_tip">我們已向郵箱“<xliff:g id="email">%1$s</xliff:g>”發送了一封驗證郵件。點擊郵件鏈接即可驗證.</string>
+    <!---->
+    <string name="find_pwd_by_email_send_ok_tip">驗證郵件已經發送至您的郵箱，點擊郵件中的鏈接即可找回格力賬號密碼。</string>
+    <!---->
+    <string name="i_know">我知道了</string>
+    <string name="find_pwd_by_phone_use">使用</string>
+    <string name="find_pwd_by_phone">手機找回</string>
+
+    <!--problem-->
+    <string name="problem_find_pwd">找回密碼</string>
+    <string name="problem_find_pwd_des">通過綁定賬號的安全資料找回</string>
+    <string name="problem_common">常見問題</string>
+    <string name="problem_common_des">提供常見問題及問題反饋</string>
+    <string name="problem_appeal">賬號申訴</string>
+    <string name="problem_appeal_des">解決無法找回密碼或賬號異常等問題</string>
+    <string name="faceback_error">請檢測售後服務應用是否存在</string>
+
+    <!---->
+    <string name="jump">跳過</string>
+    <string name="pwd_not_right">密碼錯誤</string>
+    <string name="find_pwd">找回密碼</string>
+    <string name="real_auth">實名認證</string>
+    <string name="device_name_relu2">不能使用空白格及emoji表情圖標</string>
+    <string name="net_error_get_ccid">獲得實名認證信息</string>
+    <string name="net_error_deviceLogout">強制退出</string>
+    <string name="net_error_updateDeviceName">更改設備名</string>
+    <string name="net_error_delAddress">刪除地址</string>
+    <string name="net_error_updateAddress">修改地址</string>
+    <string name="net_error_updateResidence">修改居住地</string>
+    <string name="net_error_loginOut">退出</string>
+    <string name="net_error_restEmail">修改郵箱</string>
+    <string name="net_error_restPhone">修改手機號碼</string>
+    <string name="net_error_reflashToken">刷新令牌</string>
+    <string name="net_error_upLoadHead">上傳頭像</string>
+    <string name="net_error_UpdateUserBaseInfo">修改用戶信息</string>
+
+    <string name="net_error_getUserInfo">獲取用戶信息</string>
+    <string name="net_error_restPwd">修改密碼</string>
+    <string name="net_error_checkPhoneRegister">驗證手機是否注冊</string>
+    <string name="net_error_findPwdByEmail">根據郵箱找回密碼</string>
+    <string name="net_error_findPwdByPhone">根據手機找回密碼</string>
+    <string name="net_error_login">登錄</string>
+    <string name="net_error_register">注冊</string>
+    <string name="net_error_checkSmsCode">驗證驗證碼</string>
+    <string name="net_error_reqSmsCode">獲取短信驗證碼</string>
+
+    <string name="gree_user_protocols_title">格力用戶協議</string>
+    <!-- 用戶協議 -->
+    <string name="gree_user_protocols_content">
+<Data><![CDATA[格力用戶注冊協議
+<br/>
+<br/>
+請務必認真閱讀和理解本《用戶注冊協議》（以下簡稱《協議》）中規定的所有權利和限制。除非您接受本《協議》條款，否則您無權注冊、登錄或使用本協議所涉及的相關服務。您一旦注冊、登錄、使用或以任何方式使用本《協議》所涉及的相關服務的行爲將視爲對本《協議》的接受，即表示您同意接受本《協議》各項條款的約束。如果您不同意本《協議》中的條款，請不要注冊、登錄或使用本《協議》相關服務。 本《協議》是用戶與珠海格力電器股份有限公司（以下簡稱“格力”）之間的法律協議。
+<br/>
+<br/>1. 服務內容
+<br/>1.1 格力網站網絡服務的具體內容由格力根據實際情況提供，包括但不限于格力開放平台、應用商店等企業服務、遊戲、論壇等。
+<br/>1.2 用戶理解並接受，格力僅提供相關的網絡服務，除此之外與相關網絡服務有關的設備（如個人電腦、手機、及其他與接入互聯網或移動互聯網有關的裝置）及所需的費用（如爲接入互聯網而支付的電話費及上網費、爲使用移動網而支付的手機費）均應由用戶自行負擔。
+<br/>1.3 用戶應輸入帳號和密碼登錄格力帳戶。爲了給您提供更便捷的登錄服務，如果您使用手機通過格力帳戶已登錄了一款格力應用軟件時，可直接一鍵登錄本機其他格力應用軟件。
+<br/>1.4 除了格力提供的軟件和服務，您還可以用格力帳號登錄使用格力合作夥伴的相關服務。
+<br/>
+<br/>2.賬號和密碼
+<br/>2.1 您一旦注冊成功成爲用戶，您將得到一個密碼和帳號，您需要對自己在帳戶中的所有活動和事件負全責。如果由于您的過失導致您的帳號和密碼脫離您的控制，則由此導致的針對您、格力或任何第三方造成的損害，您將承擔全部責任。
+<br/>2.2 您有權隨時更改密碼，您同意若發現任何安全漏洞或非法使用用戶賬號的情況，您應當立即通知格力。
+<br/>2.3您同意在未經適當授權的情況下，在任何時候均不使用其他成員的賬戶、用戶名或密碼。
+<br/>
+<br/>3.使用規則
+<br/>3.1 您在使用本服務時，應當遵守相關的法律法規，包括但不限于《中華人民共和國憲法》、《中華人民共和國刑法》、《中華人民共和國民法通則》、《中華人民共和國合同法》、《中華人民共和國著作權法》、《中華人民共和國電信條例》、《互聯網信息服務管理辦法》、《互聯網電子公告服務管理規定》、《中華人民共和國保守國家秘密法》、《中華人民共和國計算機信息系統安全保護條例》、《計算機信息網絡國際聯網安全保護管理辦法》、《全國人民代表大會常務委員會關于維護互聯網安全的決定》及其相關的司法解釋
+<br/>3.2 您在使用本服務的過程中，必須遵守以下原則：
+<br/>3.2.1 遵守所有與網絡服務有關的網絡協議、規定和程序；
+<br/>3.2.2 不得進行任何可能對互聯網的正常運轉造成不利影響的行爲；
+<br/>3.2.3 不得爲任何非法目的或爲任何商業目的而使用本服務；
+<br/>3.2.4 不得進行任何不利于格力開放平台的行爲；
+<br/>3.2.5 不得傳輸任何騷擾性的、中傷他人的、辱罵性的、恐嚇性的、庸俗淫穢的或其他任何非法的信息資料；
+<br/>3.2.6 獲得您提交任何資料的合法權利所必要的同意、允許或許可；
+<br/>3.2.7 不傳播或者張貼垃圾郵件、不合理巨大的文件、連鎖郵件、傳銷模式、病毒或者其他可能損害本服務或者本服務使用人利益或財産的技術。
+<br/>3.3 您有權根據格力用戶的規定使用格力賬號提供的相關服務。
+<br/>3.4 如果您在使用過程中注冊資料發生變更，則您應當及時更新准確的、詳細的注冊資料。
+<br/>3.5 您應當對以您的用戶賬號進行的任何行爲承擔法律責任，包括但不限于您本人/他人利用您賬號和密碼所進行的一切行爲。如因您未保管好您的賬號和密碼而給格力及其關聯公司、第三方造成損失，您應當進行全額賠償，並消除影響。
+<br/>3.6 您理解並同意在使用格力賬號提供的各項服務時，同意接受格力或第三方提供的各類信息服務。
+<br/>3.7 格力有權根據實際情況中斷、變更、終止服務，且格力不需對您或任何第三方承擔任何責任。
+<br/>
+<br/>4.禁止行爲
+<br/>您不得利用格力賬號發布或傳播敏感信息和違反國家法律法規、政策的信息，包括但不限于下列信息：
+<br/>4.1 違反憲法確定的基本原則的；
+<br/>4.2 危害國家統一、主權和領土完整的；
+<br/>4.3 泄露國家秘密、危害國家安全或者損害國家榮譽和利益的；
+<br/>4.4 煽動民族仇恨、民族歧視，破壞民族團結，或者侵害民族風俗、習慣的；
+<br/>4.5 宣揚邪教、迷信的；
+<br/>4.6 散布謠言，擾亂社會秩序，破壞社會穩定的；
+<br/>4.7 宣揚淫穢、賭博、暴力或者教唆犯罪的；
+<br/>4.8侮辱或者誹謗他人，侵害他人合法權益的；
+<br/>4.9危害社會公德或者民族優秀文化傳統的；
+<br/>4.10有法律、行政法規和國家規定禁止的其他內容的。
+<br/>
+<br/>5. 服務變更、中斷或終止
+<br/>5.1 鑒于網絡服務的特殊性，用戶同意格力有權根據業務發展情況隨時變更、中斷或終止部分或全部的網絡服務而無需通知用戶，也無需對任何用戶或任何第三方承擔任何責任；
+<br/>5.2 用戶理解，格力需要定期或不定期地對提供網絡服務的平台（如互聯網網站、移動網絡等）或相關的設備進行檢修或者維護，如因此類情況而造成網絡服務在合理時間內的中斷，格力無需爲此承擔任何責任，但格力應盡可能事先進行通告。
+<br/>5.3 如發生下列任何一種情形，格力有權隨時中斷或終止向用戶提供本《協議》項下的網絡服務（包括收費網絡服務）而無需對用戶或任何第三方承擔任何責任：
+<br/>5.3.1 用戶提供的個人資料不真實；
+<br/>5.3.2 用戶違反本《協議》中規定的使用規則。
+<br/>
+<br/>6. 知識産權
+<br/>6.1 格力提供的網絡服務中包含的任何文本、圖片、圖形、音頻和/或視頻資料均受版權、商標和/或其它財産所有權法律的保護，未經相關權利人同意，上述資料均不得用于任何商業目的。
+<br/>6.2 格力爲提供網絡服務而使用的任何軟件（包括但不限于軟件中所含的任何圖像、照片、動畫、錄像、錄音、音樂、文字和附加程序、隨附的幫助材料）的一切權利均屬于該軟件的著作權人，未經該軟件的著作權人許可，用戶不得對該軟件進行反向工程（reverse engineer）、反向編譯（decompile）或反彙編（disassemble）。
+<br/>
+<br/>7. 隱私保護
+<br/>7.1 保護用戶隱私是格力的一項基本政策，格力保證不對外公開或向第三方提供單個用戶的注冊資料及用戶在使用網絡服務時存儲在格力的非公開內容，但下列情況除外：
+<br/>7.1.1 事先獲得用戶的明確授權；
+<br/>7.1.2 根據有關的法律法規要求；
+<br/>7.1.3 按照相關政府主管部門的要求；
+<br/>7.1.4 按照公安機關、檢察院、法院調查的要求；
+<br/>7.1.5 爲維護社會公衆的利益；
+<br/>7.1.6 爲維護格力的合法權益。
+<br/>7.2 格力可能會與第三方合作向用戶提供相關的網絡服務，在此情況下，如該第三方同意承擔與格力同等的保護用戶隱私的責任，則格力有權將用戶的注冊資料等提供給該第三方。
+<br/>7.3 在不透露單個用戶隱私資料的前提下，格力有權對整個用戶數據庫進行分析並對用戶數據庫進行商業上的利用。
+<br/>7.4 格力制定了以下四項隱私權保護原則，指導我們如何來處理産品中涉及到用戶隱私權和用戶信息等方面的問題：
+<br/>（1） 利用我們收集的信息爲用戶提供有價值的産品和服務。
+<br/>（2） 開發符合隱私權標准和隱私權慣例的産品。
+<br/>（3） 將個人信息的收集透明化，並由權威第三方監督。
+<br/>（4） 盡最大的努力保護我們掌握的信息。
+<br/>
+<br/>8. 免責聲明
+<br/>8.1 格力不擔保網絡服務一定能滿足用戶的要求，也不擔保網絡服務不會中斷，對網絡服務的及時性、安全性、准確性也都不作擔保。
+<br/>8.2 格力不保證爲向用戶提供便利而設置的外部鏈接的准確性和完整性，同時，對于該等外部鏈接指向的不由格力實際控制的任何網頁上的內容，格力不承擔任何責任。
+<br/>8.3 對于因電信系統或互聯網網絡故障、計算機故障或病毒、信息損壞或丟失、計算機系統問題或其它任何不可抗力原因而産生損失，格力不承擔任何責任，但將盡力減少因此而給用戶造成的損失和影響。
+<br/>
+<br/>9. 法律及爭議解決
+<br/>9.1 本協議適用中華人民共和國法律。
+<br/>9.2 因本協議引起的或與本協議有關的任何爭議，各方應友好協商解決；協商不成的，任何一方均可將有關爭議提交至格力所在地有管轄權的人民法院管轄。
+<br/>
+<br/>10. 其他條款
+<br/>10.1 如果本協議中的任何條款無論因何種原因完全或部分無效或不具有執行力，或違反任何適用的法律，則該條款被視爲刪除，但本協議的其余條款仍應有效並且有約束力。
+<br/>10.2 格力有權隨時根據有關法律、法規的變化以及公司經營狀況和經營策略的調整等修改本協議，而無需另行單獨通知用戶。修改後的協議會在格力網站上公布。用戶可隨時通過格力網站浏覽最新服務協議條款。當發生有關爭議時，以最新的協議文本爲准。如果不同意格力對本協議相關條款所做的修改，用戶有權停止使用網絡服務。如果用戶繼續使用網絡服務，則視爲用戶接受格力對本協議相關條款所做的修改。
+<br/>10.3 格力在法律允許最大範圍對本協議擁有解釋權與修改權。]]></Data>
+    </string>
+
+</resources>

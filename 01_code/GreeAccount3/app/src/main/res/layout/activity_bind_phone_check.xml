@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title_txv"
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/update_pwd_title_margintop"
+        android:text="@string/phone_check_title"
+        android:textColor="@color/gree_gray"
+        android:textSize="@dimen/text_des_size" />
+
+    <com.gree.greeaccount.widget.SmsEditView
+        android:id="@+id/sms"
+        style="@style/edt_layout"
+        android:layout_marginTop="@dimen/update_pwd_title_marginbottom"
+        app:alert="@string/no_registered"
+        app:filter_registered="true" />
+
+    <TextView
+        style="@style/checkbox_lable"
+        android:layout_marginStart="@dimen/btn_margin_lr"
+        android:layout_marginTop="@dimen/checkbox_margintop"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:onClick="problemClick"
+        android:text="@string/phone_check_des" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="nextClick"
+        android:text="@string/next_step" />
+
+</LinearLayout>

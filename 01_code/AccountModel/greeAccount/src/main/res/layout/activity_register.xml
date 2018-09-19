@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/provision_common_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:layout_centerVertical="true"
+            android:text="@string/register_gree_account"
+            android:textColor="@color/gree_black"
+            android:textSize="@dimen/text_content_title_szie"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:onClick="problemClick"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|center_vertical"
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:text="@string/reigster_problem"
+            android:textColor="@color/text_color_light_black"
+            android:textSize="@dimen/text_sub_title_size"/>
+    </LinearLayout>
+
+    <com.gree.greeaccount.widget.EmojiFilterEditText
+        android:id="@+id/register_phone_et"
+        style="@style/edit"
+        android:layout_marginTop="@dimen/root_padding_top_least"
+        android:hint="@string/input_phone"
+        android:inputType="numberDecimal"
+        android:maxLength="11" />
+
+    <com.gree.greeaccount.widget.SmsEditView
+        android:id="@+id/register_sms"
+        style="@style/edt_layout"
+        app:alert="@string/has_registered"
+        app:filter_registered="false" />
+
+    <LinearLayout
+        style="@style/layout_width_full"
+        android:layout_marginStart="@dimen/btn_margin_lr"
+        android:layout_marginTop="@dimen/checkbox_margintop">
+
+        <CheckBox
+            android:id="@+id/register_check_cb"
+            style="@style/checkbox"
+            android:checked="true"
+            android:text="@string/has_read_agree_agreement" />
+
+        <TextView
+            style="@style/checkbox_lable"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:onClick="userAgreementClick"
+            android:text="@string/user_register_agreement" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="nextClick"
+        android:text="@string/next_step"
+        android:textAllCaps="false" />
+
+</LinearLayout>

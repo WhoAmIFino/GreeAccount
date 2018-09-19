@@ -1,0 +1,303 @@
+package com.gree.greeaccountlib.asynctask;
+
+import gree.ApiShareMethod.ApiHeaders;
+import gree.ApiShareMethod.HttpResult;
+import gree.phone.api.CloudApi;
+import android.content.Context;
+import android.os.AsyncTask;
+
+import com.gree.greeaccountlib.bean.ReqDataBean;
+import com.gree.greeaccountlib.bean.ResponseBean;
+import com.gree.greeaccountlib.bean.UserInfoBean;
+import com.gree.greeaccountlib.common.APIConstant;
+import com.gree.greeaccountlib.common.RequestType;
+import com.gree.greeaccountlib.data.DatabaseManager;
+import com.gree.greeaccountlib.util.BuildApiUtil;
+import com.gree.greeaccountlib.util.LogUtils;
+import com.gree.greeaccountlib.util.ParseJsonUtil;
+import com.gree.greeaccountlib.util.SharedPreferencesUtil;
+import com.gree.greeaccountlib.util.SystemServiceUtil;
+
+/**
+ * 异步请求类
+ * 
+ * @author yangtiebing
+ */
+public class ApiAsyncTask extends AsyncTask<ReqDataBean, String, HttpResult> {
+	private String TAG = "ApiAsyncTask.java";
+	private Context mContext;
+	public CloudApiBackListener scLintener;
+	private int mRequestType;
+	private ReqDataBean mReqDataBean;
+
+	/**
+	 * 返回结果的回调接口
+	 * 
+	 * @author 850305
+	 *
+	 */
+	public interface CloudApiBackListener {
+		void succeedCallBack(ResponseBean responseBean, int responseType);
+
+		void errorCallBack(String str, int responseType);
+	}
+
+	public ApiAsyncTask(Context context, CloudApiBackListener scl,
+			int requestType) {
+		mContext = context;
+		scLintener = scl;
+		mRequestType = requestType;
+	}
+
+	@Override
+	protected HttpResult doInBackground(ReqDataBean... params) {
+		mReqDataBean = params[0];
+		setReqDataBeanValue(mReqDataBean);
+		HttpResult result = sendToService(mReqDataBean);
+		return result;
+	}
+
+	@Override
+	protected void onPreExecute() {
+
+	}
+
+	@Override
+	public void onPostExecute(HttpResult Re) {
+		if (null != Re && Re.responseCode == 200) {
+//			LogUtils.i(TAG, "ResponseBean ,Re.responseString "
+//					+ Re.responseString);
+			ResponseBean bean = ParseJsonUtil
+					.parseResponseJson(Re.responseString);
+
+			//LogUtils.i(TAG, "ResponseBean ,bean.toString(): " + bean.toString());
+			String code = bean.getCode();
+			String msg = bean.getMsg();
+			if ("0".equals(code)) {
+
+				UserInfoBean userInfoBean = new UserInfoBean();
+				userInfoBean.setName(bean.getName());
+				userInfoBean.setPassword(bean.getPassword());
+				userInfoBean.setToken(bean.getToken());
+				//LogUtils.i(TAG, "onPostExecute ,phone: " + bean.getPhone());
+				userInfoBean.setPhone(bean.getPhone());
+				userInfoBean.setEmail(bean.getEmail());
+				userInfoBean.setUserid(bean.getUserId());
+				userInfoBean.setRequestid(bean.getRequsetId());
+				userInfoBean.setGkey(bean.getGKey());
+				userInfoBean.setIslogin("0");
+				long time = System.currentTimeMillis();
+				//LogUtils.i(TAG, "time: " + time);
+				userInfoBean.setLastlogintime(time);
+				userInfoBean.setUserLogo("无");
+				insertDataBase(userInfoBean);// 保存、更新数据到数据库
+				scLintener.succeedCallBack(bean, mRequestType);
+			} else {
+				scLintener.errorCallBack(msg, mRequestType);
+			}
+		} else {
+			scLintener.errorCallBack("网络异常", mRequestType);
+		}
+
+	}
+
+	/**
+	 * 调用服务器接口
+	 * 
+	 * @param bean
+	 *            ：请求数据
+	 * @return HttpResult：返回结果
+	 */
+	public synchronized HttpResult sendToService(ReqDataBean bean) {
+		LogUtils.i(TAG, "sendToService: " + mRequestType);
+		HttpResult result = null;
+		String deviceId = bean.getSerialNumber();
+
+		String userId = DatabaseManager.getUserIdByName(mContext,
+				bean.getName());
+		LogUtils.i(TAG, "userId: " + userId);
+		String token = DatabaseManager.getTokenByName(mContext, bean.getName());
+		LogUtils.i(TAG, "token: " + token);
+		String gKey = DatabaseManager.getGKeyByName(mContext, bean.getName());
+		LogUtils.i(TAG, "gKey: " + gKey);
+		String params = BuildApiUtil.buildJson(BuildApiUtil.buildDataMap(bean,
+				mRequestType));//
+		ApiHeaders apiHeaders;
+		CloudApi mCloudApi;
+
+		try {
+
+			switch (mRequestType) {
+			case RequestType.GET_SMS_CODE:// 请求手机短信验证码(获取短信验证码) ：OK
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, "");
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, "", false);
+				result = mCloudApi.ResquestSmsCode(bean.getPhone());
+				break;
+
+			case RequestType.POST_VERIFY_MOBILE_PHONE:// 验证短信验证码
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, "");
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, "", false);
+				result = mCloudApi.VerifySmsCode(params);
+				break;
+			case RequestType.POST_REGISTER_PHONE:// 手机注册 ok
+			case RequestType.POST_REGISTER_EMAIL:// 邮箱注册
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, "");
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, "", false);
+				result = mCloudApi.UserRegister(params);
+				break;
+			case RequestType.POST_LOGIN:// 登录 ok
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, "");
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, "", false);
+				result = mCloudApi.UserLogin(params);
+				break;
+			case RequestType.POST_UPDATE_PASSWORD:// 安全修改密码（使用旧密码进行重置） ok
+
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, token);
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, gKey, true);
+				result = mCloudApi.UserResetPasswordByOldPwd(userId, params);
+				break;
+
+			case RequestType.POST_RESET_PASSWORD:// 通过手机验证修改密码(验证收到的验证码并重置密码):ok
+				LogUtils.i(TAG,
+						"send UserResetPasswordByPhoneNumber  + params:"
+								+ params);
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, token);
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, gKey, true);
+				result = mCloudApi.UserResetPasswordByPhoneNumber(params);
+				LogUtils.i(TAG, "send UserResetPasswordByPhoneNumber   result:"
+						+ result);
+				break;
+
+			case RequestType.POST_REQUEST_PASSWORD_RESET:// 通过邮箱修改密码(邮箱找回密码):需要绑定邮箱
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, token);
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, gKey, true);
+				result = mCloudApi.UserResetPasswordByEmail(params);
+				break;
+
+			case RequestType.GET_GET_USERINFO:// 获取用户信息：OK
+
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, token);
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, gKey, true);
+				result = mCloudApi.GetUserInfo(userId);
+				break;
+
+			case RequestType.POST_UPDATE_USERINFO:// 更新用户信息: 有异常
+				apiHeaders = new ApiHeaders(APIConstant.APP_ID,
+						APIConstant.APP_KEY, deviceId, token);
+				mCloudApi = new CloudApi(APIConstant.TEST_SERVER_URL,
+						apiHeaders, gKey, true);
+				result = mCloudApi.UpdateUserInfo(userId, params);
+
+				break;
+
+			case RequestType.DELETE_USER:// 删除用户信息: 有异常
+
+				break;
+
+			case RequestType.POST_LOGOUT:// 注销用户
+				// {"Code":0,"Msg":"Success","SmsCode":"","RequestId":"fe88ace3-ee06-4845-84cc-9fa083756b0d"}
+
+				result = new HttpResult();
+				result.responseCode = 200;
+				result.responseString = "{\"Code\":\"0\", \"Msg\":\"Success\" }";
+
+				break;
+
+			default:
+				break;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (null != result) {
+			LogUtils.i(TAG, "responseCode : " + result.responseCode
+					+ ", responseString : " + result.responseString);
+		} else {
+			LogUtils.e(TAG, "result is null  ");
+		}
+
+		return result;
+
+	}
+
+	private void setReqDataBeanValue(ReqDataBean dataBean) {
+		dataBean.setSerialNumber(SystemServiceUtil.getSerialNumber());
+		dataBean.setModel(SystemServiceUtil.getPhoneModel());
+		dataBean.setWifiMac(SystemServiceUtil.getMacAddress(mContext));
+		dataBean.setIMEI(SystemServiceUtil.getIMEI(mContext));
+		dataBean.setICCID(SystemServiceUtil.getSimSerialNumber(mContext));
+	}
+
+	private void insertDataBase(UserInfoBean bean) {
+
+		switch (mRequestType) {
+		case RequestType.GET_SMS_CODE:// 请求手机短信验证码(获取短信验证码)
+
+			bean.setPhone(mReqDataBean.getPhone());
+			bean.setName(mReqDataBean.getName());
+			// DatabaseManager.insertOrupdateRequestId(mContext, bean);
+			SharedPreferencesUtil.setRequestId(mContext,
+					mReqDataBean.getPhone(), bean.getRequestid());
+			break;
+
+		case RequestType.POST_VERIFY_MOBILE_PHONE:// 验证短信验证码
+			break;
+		case RequestType.POST_REGISTER_PHONE:// 手机注册 ok
+		case RequestType.POST_REGISTER_EMAIL:// 邮箱注册
+			break;
+		case RequestType.POST_LOGIN:// 登录 ok
+			bean.setIslogin("1");
+			// bean.setPassword(mReqDataBean.getPassword());
+			DatabaseManager.insertOrUpdateUserInfo(mContext, bean);
+			break;
+		case RequestType.POST_UPDATE_PASSWORD:// 安全修改密码（使用旧密码进行重置）
+			// bean.setPassword(mReqDataBean.getNewPassword());
+			// DatabaseManager.updateUserPwd(mContext, bean);
+			break;
+
+		case RequestType.POST_RESET_PASSWORD:// 通过手机验证修改密码(验证收到的验证码并重置密码)
+			// bean.setPassword(mReqDataBean.getNewPassword());
+			// DatabaseManager.updateUserPwd(mContext, bean);
+			break;
+
+		case RequestType.POST_REQUEST_PASSWORD_RESET:// 通过邮箱修改密码(邮箱找回密码):需要绑定邮箱
+			break;
+
+		case RequestType.GET_GET_USERINFO:// 获取用户信息
+		case RequestType.POST_UPDATE_USERINFO:// 更新用户信息
+
+			DatabaseManager.updateUserInfo(mContext, bean);
+			break;
+		case RequestType.DELETE_USER:// 删除用户信息: 有异常
+
+			break;
+
+		case RequestType.POST_LOGOUT:// 注销用户
+			bean.setName(mReqDataBean.getName());
+			bean.setIslogin("0");
+			DatabaseManager.updateIsLogin(mContext, bean);
+			break;
+
+		default:
+			break;
+		}
+
+	}
+}

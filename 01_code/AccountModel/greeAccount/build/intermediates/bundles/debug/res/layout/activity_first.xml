@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/skip"
+        android:onClick="skipClick" />
+
+    <TextView
+        style="@style/provision_common_title"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/gree_app_name" />
+
+    <TextView
+        style="@style/layout_wrap"
+        android:layout_marginBottom="@dimen/provision_common_title_marginbottom"
+        android:layout_marginLeft="@dimen/root_padding_lr"
+        android:text="@string/first_title"
+        android:textColor="@color/gree_black"
+        android:textSize="@dimen/text_sub_title_size" />
+
+    <RelativeLayout style="@style/first_item">
+
+        <ImageView
+            android:id="@+id/first_cloud_icon"
+            style="@style/first_icon"
+            android:src="@drawable/ic_2_cloud" />
+
+        <TextView
+            android:id="@+id/first_cloud_title"
+            style="@style/first_item_title"
+            android:layout_toRightOf="@id/first_cloud_icon"
+            android:text="@string/first_gree_cloud" />
+
+        <TextView
+            style="@style/first_item_des"
+            android:layout_below="@id/first_cloud_title"
+            android:layout_toRightOf="@id/first_cloud_icon"
+            android:text="@string/first_gree_cloud_des" />
+
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/first_item">
+
+        <ImageView
+            android:id="@+id/first_findphone_icon"
+            style="@style/first_icon"
+            android:layout_marginRight="@dimen/first_icon_margin_right"
+            android:src="@drawable/ic_2_seek" />
+
+        <TextView
+            android:id="@+id/first_findphone_title"
+            style="@style/first_item_title"
+            android:layout_toRightOf="@id/first_findphone_icon"
+            android:text="@string/first_gree_findphone" />
+
+        <TextView
+            style="@style/first_item_des"
+            android:layout_below="@id/first_findphone_title"
+            android:layout_toRightOf="@id/first_findphone_icon"
+            android:text="@string/first_gree_findphone_des" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/first_item">
+
+        <ImageView
+            android:id="@+id/first_feedback_icon"
+            style="@style/first_icon"
+            android:layout_marginRight="@dimen/first_icon_margin_right"
+            android:src="@drawable/ic_2_service" />
+
+        <TextView
+            android:id="@+id/first_feedback_title"
+            style="@style/first_item_title"
+            android:layout_toRightOf="@id/first_feedback_icon"
+            android:text="@string/first_gree_feedback" />
+
+        <TextView
+            style="@style/first_item_des"
+            android:layout_below="@id/first_feedback_title"
+            android:layout_toRightOf="@id/first_feedback_icon"
+            android:text="@string/first_gree_feedback_des" />
+
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/first_item">
+
+        <ImageView
+            android:id="@+id/first_bbs_icon"
+            style="@style/first_icon"
+            android:layout_marginRight="@dimen/first_icon_margin_right"
+            android:src="@drawable/ic_2_forum" />
+
+        <TextView
+            android:id="@+id/first_bbs_title"
+            style="@style/first_item_title"
+            android:layout_toRightOf="@id/first_bbs_icon"
+            android:text="@string/first_gree_bbs" />
+
+        <TextView
+            style="@style/first_item_des"
+            android:layout_below="@id/first_bbs_title"
+            android:layout_toRightOf="@id/first_bbs_icon"
+            android:text="@string/first_gree_bbs_des" />
+
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <Button
+        android:id="@+id/first_registr"
+        style="@style/btn_blue"
+        android:onClick="registerClick"
+        android:text="@string/register" />
+
+    <Button
+        android:id="@+id/first_login"
+        style="@style/btn_blue"
+        android:onClick="loginClick"
+        android:text="@string/login" />
+
+</LinearLayout>

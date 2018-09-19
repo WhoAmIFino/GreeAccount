@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gree.greeaccount"
+    android:versionCode="21"
+    android:versionName="3.1.17_180813">
+
+
+    <permission
+        android:name="com.gree.provider.account.user.write"
+        android:label="greeaccount write"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.gree.provider.account.user.read"
+        android:label="greeaccount read"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.gree.provider.account.address.write"
+        android:label="gree address write"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.gree.provider.account.address.read"
+        android:label="gree address read"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.gree.greeaccount.api"
+        android:label="gree api"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.gree.greeaccount.broadcast"
+        android:label="gree broadcast"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="com.gree.greeaccount.broadcast" />
+    <uses-permission android:name="com.gree.provider.account.user.write" />
+    <uses-permission android:name="com.gree.provider.account.user.read" />
+    <uses-permission android:name="com.gree.provider.account.address.write" />
+    <uses-permission android:name="com.gree.provider.account.address.read" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <!-- 地图 -->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <!-- 需要运行时注册的权限 -->
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于提高GPS定位速度 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 更改设置 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 3.2.0版本增加 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="com.gree.findMobile.IS_OPEN" />
+
+    <application
+        android:resizeableActivity="false"
+        android:name=".activity.AccountApplication"
+        android:allowBackup="true"
+        android:allowClearUserData="false"
+        android:icon="@mipmap/ic_launcher"
+        android:killAfterRestore="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--no use-->
+        <activity
+            android:name=".activity.AlertNoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FirstActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.gree.intent.action.ACCOUNT_FIRST" />
+
+                <data android:scheme="gaccount" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true"
+            android:label="@string/login_gree_account"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+            <intent-filter>
+                <action android:name="com.gree.intent.action.LOGIN" />
+
+                <data android:scheme="gaccount" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginProblemActivity"
+            android:label="@string/login_register_width_problem"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:exported="true"
+            android:label="@string/register_gree_account"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+            <intent-filter>
+                <action android:name="com.gree.intent.action.REGISTER" />
+
+                <data android:scheme="gaccount" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.RegisterConfirmActivity"
+            android:label="@string/pwd_set"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".activity.AccountMainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.gree.intent.action.ACCOUNT_MAIN" />
+
+                <data android:scheme="gaccount" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:exported="true"
+            android:label="@string/user_info"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MedalActivity"
+            android:label="@string/medal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SetActivity"
+            android:label="@string/set"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DevicesActivity"
+            android:label="@string/login_manager"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AccountSafeActivity"
+            android:label="@string/account_safe"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RealAuthActivity"
+            android:label="@string/real_name_auth"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PhoneViewActivity"
+            android:label="@string/bind_phone"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DeviceInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PermissionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FindPwdByPhoneActivity"
+            android:label="@string/problem_find_pwd"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".activity.FindPwdByPhoneConfirmActivity"
+            android:label="@string/pwd_set"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".activity.UserNoticeActivity"
+            android:label="@string/gree_user_protocols_title"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FindPwdByEmailActivity"
+            android:label="@string/find_pwd"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".activity.ResidenceActivity"
+            android:label="@string/user_info"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BindPhoneCheckActivity"
+            android:label="@string/sms_code_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".activity.BindPhoneActivity"
+            android:label="@string/bind_phone"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.EmailViewActivity"
+            android:label="@string/bind_safe_email"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BindEmailActivity"
+            android:label="@string/bind_safe_email"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".activity.ReSetPwdActivity"
+            android:label="@string/update_pwd"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <service
+            android:name=".activity.AccountService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver android:name=".activity.NetStateReceiver">
+                    
+            <intent-filter>
+                        
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+              
+        </receiver>
+
+        <!-- 注意这个地方的位置，是在application标签里面；android:authorities对应Provider.AUTHORITY -->
+        <provider
+            android:name=".db.UserProvider"
+            android:authorities="com.gree.provider.account.user"
+            android:exported="true"
+            android:readPermission="@string/greeaccount_read_permission"
+            android:writePermission="@string/greeaccount_write_permission" />
+        <provider
+            android:name=".db.AddressProvider"
+            android:authorities="com.gree.provider.account.address"
+            android:exported="true"
+            android:readPermission="@string/address_read_permission"
+            android:writePermission="@string/address_write_permission" />
+        <provider
+            android:name=".db.DeviceProvider"
+            android:authorities="com.gree.provider.account.device"
+            android:exported="false" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.gree.greeaccount.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <service
+            android:name=".apiservice.ApiService"
+            android:exported="true"
+            android:permission="@string/api_permission">
+            <intent-filter>
+                <action android:name="com.gree.greeaccount.api.action" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <!-- 设置key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="73a2348143a660f4faefd1fb8b69688b" />
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService" />
+    </application>
+
+</manifest>

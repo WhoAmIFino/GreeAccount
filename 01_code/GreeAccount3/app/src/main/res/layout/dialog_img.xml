@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_full"
+    android:background="@drawable/gui_common_dialog_corners"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/taking_pictures"
+        style="@style/btn_black"
+        android:layout_margin="0dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="@string/taking_pictures" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/gree_gray" />
+
+    <Button
+        android:id="@+id/from_grally"
+        style="@style/btn_black"
+        android:layout_margin="0dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="@string/from_grally" />
+</LinearLayout>

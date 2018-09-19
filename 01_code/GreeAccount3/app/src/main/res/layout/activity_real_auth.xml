@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              style="@style/root_view_style"
+              android:orientation="vertical">
+
+    <com.gree.greeaccount.widget.ImgControllableTextView
+        app:isAlignCenter="false"
+        style="@style/txt_with_dot"
+        android:layout_marginTop="@dimen/real_auth_dot_margin"
+        android:text="@string/real_auth_des_1" />
+
+    <com.gree.greeaccount.widget.ImgControllableTextView
+        app:isAlignCenter="false"
+        style="@style/txt_with_dot"
+        android:text="@string/real_auth_des_2" />
+
+    <com.gree.greeaccount.widget.ImgControllableTextView
+        app:isAlignCenter="false"
+        style="@style/txt_with_dot"
+        android:drawableLeft="@drawable/ic_list_dot_red_mark"
+        android:layout_marginBottom="@dimen/real_auth_dot_margin"
+        android:text="@string/real_auth_des_3"
+        android:textColor="@color/gree_red" />
+
+    <LinearLayout
+        style="@style/item_layout"
+        android:background="@drawable/line_two_devir_bg"
+        android:clickable="false"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/real_name" />
+
+        <View style="@style/item_diver" />
+
+        <com.gree.greeaccount.widget.EmojiFilterEditText
+            android:id="@+id/real_name"
+            style="@style/txv"
+            android:maxLength="30"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:background="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/doc_type_layout"
+        style="@style/item_layout"
+        android:onClick="docTypeClick"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/documents_type" />
+
+        <View style="@style/item_diver" />
+
+        <TextView
+            android:id="@+id/doc_type"
+            style="@style/txv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableRight="@drawable/ic_list_skip_normal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_layout"
+        android:clickable="false"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/documents_num" />
+
+        <View style="@style/item_diver" />
+
+        <com.gree.greeaccount.widget.EmojiFilterEditText
+            android:id="@+id/doc_num"
+            style="@style/txv"
+            android:layout_width="match_parent"
+            android:maxLength="30"
+            android:singleLine="true"
+            android:background="@null" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/error_txv"
+        style="@style/layout_wrap"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"
+        android:text="@string/auth_failue"
+        android:textColor="@color/gree_red"
+        android:textSize="@dimen/text_des_size" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="nextClick"
+        android:text="@string/next_step" />
+
+</LinearLayout>

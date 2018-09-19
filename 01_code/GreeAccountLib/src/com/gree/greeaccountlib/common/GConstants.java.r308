@@ -1,0 +1,13 @@
+package com.gree.greeaccountlib.common;
+
+public class GConstants {
+
+	// 远程启动activity的action
+	public static final String LAUNCH_ACTIVITY_REGISTER_URI = "com.gree.intent.action.REGISTER";
+	public static final String LAUNCH_ACTIVITY_LOGIN_URI = "com.gree.intent.action.LOGIN";
+	public static final String LAUNCH_ACTIVITY_RESETPWD_BYOLDPWD_URI = "com.gree.intent.action.RESET_PWD_BY_OLDPWD";// 安全修改密码
+
+	// 远程启动activity的uri
+	public static final String SCHEME_URI = "gaccount://com.gree.greeaccount:8888/test";
+
+}

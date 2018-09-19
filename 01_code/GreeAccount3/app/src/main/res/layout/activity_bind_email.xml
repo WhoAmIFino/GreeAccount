@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <com.gree.greeaccount.widget.EmojiFilterEditText
+        android:id="@+id/register_email_et"
+        style="@style/edit"
+        android:layout_marginTop="@dimen/root_padding_top_least"
+        android:hint="@string/input_safe_email"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        style="@style/checkbox_lable"
+        android:layout_marginStart="@dimen/btn_margin_lr"
+        android:layout_marginTop="@dimen/checkbox_margintop"
+        android:text="@string/email_view_des" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="nextClick"
+        android:text="@string/next_step" />
+
+</LinearLayout>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--布局宽高 -->
+    <style name="layout_full">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="layout_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layout_width_full">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layout_height_full">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="root_view_style" parent="layout_full">
+        <item name="android:background">@color/main_bg</item>
+    </style>
+
+    <style name="txv" parent="layout_wrap">
+        <item name="android:textColor">@color/gree_black</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+    <style name="txv_alert_notice_item" parent="txv">
+        <item name="android:paddingStart">@dimen/root_padding_lr</item>
+        <item name="android:paddingEnd">@dimen/root_padding_lr</item>
+        <item name="android:layout_marginBottom">@dimen/alert_notice_item_marginbottom</item>
+    </style>
+
+    <style name="btn">
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:layout_marginLeft">@dimen/btn_margin_lr</item>
+        <item name="android:layout_marginRight">@dimen/btn_margin_lr</item>
+        <item name="android:layout_marginBottom">@dimen/btn_margin_bottom</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/btn_padding</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:enterFadeDuration">500</item>
+        <item name="android:exitFadeDuration">500</item>
+    </style>
+
+    <style name="provision_common_title" parent="layout_wrap">
+        <item name="android:layout_marginLeft">@dimen/root_padding_lr</item>
+        <item name="android:layout_marginRight">@dimen/root_padding_lr</item>
+        <item name="android:layout_marginBottom">@dimen/provision_common_title_marginbottom</item>
+        <item name="android:layout_marginTop">42dp</item>
+        <item name="android:textColor">@color/gree_black</item>
+        <item name="android:textSize">@dimen/text_content_title_szie</item>
+    </style>
+
+    <style name="btn_black" parent="btn">
+        <item name="android:textColor">@drawable/btn_black_textcolor_selector</item>
+        <item name="android:background">@drawable/btn_black_bg</item>
+    </style>
+
+    <style name="edit">
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">@dimen/btn_margin_lr</item>
+        <item name="android:layout_marginRight">@dimen/btn_margin_lr</item>
+        <item name="android:padding">@dimen/edt_padding</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_edit_content_size</item>
+        <item name="android:textColor">@color/gree_black</item>
+        <item name="android:layout_marginTop">@dimen/edt_margintop</item>
+        <item name="android:background">@drawable/btn_gray_rect_bg</item>
+    </style>
+
+    <style name="edt_layout">
+        <item name="android:layout_marginLeft">@dimen/btn_margin_lr</item>
+        <item name="android:layout_marginRight">@dimen/btn_margin_lr</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/edt_margintop</item>
+        <item name="android:background">@drawable/btn_gray_rect_bg</item>
+    </style>
+
+    <style name="btn_blue" parent="btn">
+        <item name="android:textColor">@drawable/btn_blue_textcolor_selector</item>
+        <item name="android:background">@drawable/btn_blue_bg</item>
+    </style>
+    <style name="btn_next" parent="btn">
+        <item name="android:textColor">@drawable/btn_blue_textcolor_selector_next</item>
+        <item name="android:background">@drawable/btn_blue_bg</item>
+    </style>
+    <style name="btn_getcode" parent="btn">
+        <item name="android:textColor">@drawable/btn_blue_textcolor_selector_next</item>
+        <item name="android:background">@drawable/btn_blue_bg</item>
+    </style>
+    <style name="first_item" parent="layout_width_full">
+        <item name="android:padding">@dimen/first_item_padding</item>
+    </style>
+
+    <style name="first_icon" parent="layout_wrap">
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/first_icon_margin_right</item>
+        <item name="android:layout_marginLeft">@dimen/first_icon_margin_left</item>
+    </style>
+
+    <style name="first_item_title" parent="txv">
+
+    </style>
+
+    <style name="first_item_des" parent="layout_wrap">
+        <item name="android:textColor">@color/text_color_light_black</item>
+        <item name="android:textSize">@dimen/text_sub_des_size</item>
+        <item name="android:layout_marginTop">@dimen/first_item_des_margintop</item>
+    </style>
+
+    <style name="checkbox" parent="layout_wrap">
+        <item name="android:textColor">@color/gree_black</item>
+        <item name="android:textSize">@dimen/text_des_size</item>
+        <item name="android:paddingLeft">@dimen/dot_draw_padding</item>
+        <item name="android:button">@drawable/checkbox_selector</item>
+    </style>
+
+    <style name="checkbox_lable" parent="layout_wrap">
+        <item name="android:textColor">@color/gree_blue</item>
+        <item name="android:textSize">@dimen/text_des_size</item>
+    </style>
+
+    <style name="txt_sub_des_with_dot" parent="layout_wrap">
+        <item name="android:textSize">@dimen/text_sub_des_size</item>
+        <item name="android:layout_marginTop">@dimen/dot_margintop</item>
+        <item name="android:textColor">@color/gree_high_gray</item>
+        <item name="android:layout_marginStart">@dimen/btn_margin_lr</item>
+        <item name="android:drawableLeft">@drawable/ic_dot_password</item>
+        <item name="android:drawablePadding">@dimen/dot_draw_padding</item>
+    </style>
+
+    <style name="txt_with_dot" parent="layout_wrap">
+        <item name="android:textSize">@dimen/text_sub_title_size</item>
+        <item name="android:layout_marginTop">@dimen/dot_margintop</item>
+        <item name="android:textColor">@color/gree_high_gray</item>
+        <item name="android:layout_marginLeft">@dimen/root_padding_lr</item>
+        <item name="android:layout_marginRight">@dimen/root_padding_lr</item>
+        <item name="android:drawableLeft">@drawable/txt_with_dot_shape</item>
+        <item name="android:drawablePadding">@dimen/dot_draw_padding</item>
+    </style>
+
+    <style name="item_layout" parent="layout_width_full">
+        <item name="android:paddingTop">@dimen/item_padding</item>
+        <item name="android:paddingBottom">@dimen/item_padding</item>
+        <item name="android:paddingLeft">@dimen/root_padding_lr</item>
+        <item name="android:paddingRight">@dimen/root_padding_lr</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/ripple_item_line_bg</item>
+    </style>
+
+    <style name="item_des_txv" parent="layout_wrap">
+        <item name="android:textColor">@color/gree_high_gray</item>
+        <item name="android:textSize">@dimen/text_sub_des_size</item>
+    </style>
+
+    <style name="item_right_goto" parent="layout_wrap">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/text_sub_des_size</item>
+        <item name="android:textColor">@color/gree_gray</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:drawableRight">@drawable/ic_list_skip_normal</item>
+        <item name="android:drawablePadding">@dimen/user_info_item_right_draw_padding</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="item_left_txv" parent="txv">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:drawablePadding">@dimen/main_item_draw_padding</item>
+    </style>
+
+    <style name="item_classification" parent="layout_width_full">
+        <item name="android:layout_height">@dimen/main_item_des_height</item>
+        <item name="android:paddingLeft">@dimen/root_padding_lr</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/gree_gray</item>
+        <item name="android:textSize">@dimen/text_sub_des_size</item>
+        <item name="android:background">@color/sub_title_bg</item>
+    </style>
+
+    <style name="item_txv" parent="txv">
+        <item name="android:paddingTop">@dimen/item_padding</item>
+        <item name="android:paddingBottom">@dimen/item_padding</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/root_padding_lr</item>
+        <item name="android:paddingRight">@dimen/root_padding_lr</item>
+        <item name="android:background">@drawable/ripple_item_line_bg</item>
+        <item name="android:clickable">true</item>
+        <item name="android:drawableRight">@drawable/ic_list_skip_normal</item>
+        <item name="android:drawablePadding">@dimen/main_item_draw_padding</item>
+    </style>
+
+    <style name="item_diver">
+        <item name="android:layout_width">2px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/item_ver_diver_margin</item>
+        <item name="android:layout_marginRight">@dimen/item_ver_diver_margin</item>
+        <item name="android:background">@color/gree_gray</item>
+    </style>
+
+    <style name="radio_style" parent="layout_width_full">
+        <item name="android:paddingTop">@dimen/item_padding</item>
+        <item name="android:paddingBottom">@dimen/item_padding</item>
+        <item name="android:textColor">@color/gree_black</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="dialog_title" parent="layout_wrap">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/dialog_title_margin</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textColor">@color/gree_black</item>
+        <item name="android:textSize">@dimen/dialog_title_size</item>
+    </style>
+
+</resources>

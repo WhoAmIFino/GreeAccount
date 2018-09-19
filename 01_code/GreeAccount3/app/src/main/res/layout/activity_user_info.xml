@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/item_classification"
+        android:text="@string/account_info" />
+
+    <RelativeLayout style="@style/item_layout"
+        android:id="@+id/user_account_layout"
+        android:onClick="accountNameClick">
+
+        <TextView
+            android:id="@+id/user_account_name_title"
+            style="@style/item_left_txv"
+            android:text="@string/account_name" />
+
+        <TextView
+            android:id="@+id/user_account_name"
+            style="@style/item_right_goto"
+            android:text="@string/no_edit" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="medalClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/medal" />
+
+        <TextView
+            android:id="@+id/user_medal"
+            style="@style/item_right_goto"
+            android:text="@string/no_get" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/item_classification"
+        android:text="@string/user_base_info" />
+
+    <RelativeLayout style="@style/item_layout"
+        android:onClick="headClick">
+
+        <com.guicommon.widget.drawable.RoundedImageView
+            android:id="@+id/user_head"
+            style="@style/layout_wrap"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_list_headportrait" />
+
+        <TextView
+            style="@style/item_right_goto"
+            android:text="@string/edt_head" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/item_layout"
+        android:onClick="nickNameClick">
+
+        <TextView
+            android:id="@+id/user_nickname_title"
+            style="@style/item_left_txv"
+            android:text="@string/nick_name" />
+
+        <TextView
+            android:id="@+id/user_nickname"
+            style="@style/item_right_goto"
+            android:text="@string/no_edit" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/item_layout"
+        android:onClick="sexClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/sex" />
+
+        <TextView
+            android:id="@+id/user_sex"
+            style="@style/item_right_goto"
+            android:text="@string/no_select" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/item_layout"
+        android:onClick="birthdayClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/birthday" />
+
+        <TextView
+            android:id="@+id/user_birthday"
+            style="@style/item_right_goto"
+            android:text="@string/no_select" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="addressClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/residence" />
+
+        <TextView
+            android:id="@+id/user_address"
+            style="@style/item_right_goto"
+            android:text="@string/select_plac" />
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_black"
+        android:visibility="gone"
+        android:onClick="logoutClick"
+        android:text="@string/logout" />
+
+</LinearLayout>

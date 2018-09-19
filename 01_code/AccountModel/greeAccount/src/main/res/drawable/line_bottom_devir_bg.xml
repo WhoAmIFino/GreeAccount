@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--底层填充色-->
+    <item>
+        <shape>
+            <solid android:color="@color/gree_gray" />
+        </shape>
+    </item>
+
+    <!--上面一层距离底层的顶部1dp-->
+    <item android:bottom="1px">
+        <shape>
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+</layer-list>

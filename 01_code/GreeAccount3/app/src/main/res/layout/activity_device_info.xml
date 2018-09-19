@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/txv"
+        android:layout_marginLeft="@dimen/root_padding_lr"
+        android:layout_marginTop="11dp"
+        android:text="@string/attention" />
+
+    <TextView
+        android:id="@+id/title_des"
+        style="@style/txv"
+        android:layout_marginLeft="@dimen/root_padding_lr"
+        android:layout_marginTop="6dp"
+        android:textSize="@dimen/text_sub_title_size"
+        android:text="@string/device_att_des"
+        android:textColor="@color/gree_high_gray" />
+
+    <ImageView
+        android:id="@+id/device_type"
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="43dp"
+        android:layout_marginTop="53dp"
+        android:src="@drawable/ic_blue_phone" />
+
+    <TextView
+        android:id="@+id/device_name"
+        style="@style/txv"
+        android:layout_marginLeft="@dimen/view_info_marginleft"
+        android:textSize="@dimen/text_sub_title_size"
+        android:text="@string/device_name" />
+
+    <TextView
+        android:id="@+id/device_model"
+        style="@style/txv"
+        android:layout_marginLeft="@dimen/view_info_marginleft"
+        android:layout_marginTop="@dimen/dot_margintop"
+        android:textSize="@dimen/text_sub_title_size"
+        android:text="@string/device_type" />
+
+    <TextView
+        android:id="@+id/device_location"
+        style="@style/txv"
+        android:layout_marginLeft="@dimen/view_info_marginleft"
+        android:layout_marginTop="@dimen/dot_margintop"
+        android:textSize="@dimen/text_sub_title_size"
+        android:text="@string/device_gps" />
+
+    <TextView
+        android:id="@+id/device_login_time"
+        style="@style/txv"
+        android:layout_marginLeft="@dimen/view_info_marginleft"
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/text_sub_title_size"
+        android:text="@string/device_login_time" />
+
+    <TextView
+        android:id="@+id/device_logout_time"
+        style="@style/txv"
+        android:layout_marginLeft="@dimen/view_info_marginleft"
+        android:layout_marginTop="@dimen/dot_margintop"
+        android:textSize="@dimen/text_sub_title_size"
+        android:text="@string/device_logout_time" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        style="@style/layout_width_full"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/btn_blue"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/first_btn_margin"
+            android:layout_marginRight="@dimen/first_btn_margin"
+            android:onClick="reNameClick"
+            android:text="@string/refactor" />
+
+        <Button
+            android:id="@+id/device_logout"
+            style="@style/btn_blue"
+            android:layout_width="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="@dimen/first_btn_margin"
+            android:layout_weight="1"
+            android:onClick="logoutClick"
+            android:text="@string/logout" />
+    </LinearLayout>
+
+</LinearLayout>

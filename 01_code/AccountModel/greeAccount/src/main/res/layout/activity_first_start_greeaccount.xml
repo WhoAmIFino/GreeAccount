@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            style="@style/skip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="skipClick" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/provision_common_title"
+        android:layout_marginBottom="0dp"
+        android:text="@string/gree_app_name"
+        android:textSize="25sp" />
+
+    <TextView
+        style="@style/layout_wrap"
+        android:layout_marginBottom="51dp"
+        android:layout_marginLeft="@dimen/root_padding_lr"
+        android:layout_marginTop="11dp"
+        android:text="@string/first_title"
+        android:textColor="@color/gree_black"
+        android:textSize="14sp" />
+
+    <RelativeLayout style="@style/first_item">
+
+        <ImageView
+            android:id="@+id/first_cloud_icon"
+            style="@style/first_icon"
+            android:layout_marginRight="@dimen/first_icon_margin_right"
+            android:src="@drawable/ic_2_cloud" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/first_cloud_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/first_cloud_title"
+                style="@style/first_item_title"
+                android:text="@string/first_gree_cloud" />
+
+            <TextView
+                style="@style/first_item_des"
+                android:layout_below="@id/first_cloud_title"
+                android:layout_toRightOf="@id/first_cloud_icon"
+                android:text="@string/first_gree_function_coming" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/first_item">
+
+        <ImageView
+            android:id="@+id/first_findphone_icon"
+            style="@style/first_icon"
+            android:layout_marginRight="@dimen/first_icon_margin_right"
+            android:src="@drawable/ic_2_seek" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/first_findphone_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/first_findphone_title"
+                style="@style/first_item_title"
+                android:text="@string/first_gree_findphone" />
+
+            <TextView
+                style="@style/first_item_des"
+                android:layout_below="@id/first_findphone_title"
+                android:layout_toRightOf="@id/first_findphone_icon"
+                android:text="@string/first_gree_findphone_des" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/first_item">
+
+        <ImageView
+            android:id="@+id/first_feedback_icon"
+            style="@style/first_icon"
+            android:layout_marginRight="@dimen/first_icon_margin_right"
+            android:src="@drawable/ic_2_service" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/first_feedback_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/first_feedback_title"
+                style="@style/first_item_title"
+                android:text="@string/first_gree_feedback" />
+
+            <TextView
+                style="@style/first_item_des"
+                android:layout_below="@id/first_feedback_title"
+                android:layout_toRightOf="@id/first_feedback_icon"
+                android:text="@string/first_gree_feedback_des" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/first_item">
+
+        <ImageView
+            android:id="@+id/first_bbs_icon"
+            style="@style/first_icon"
+            android:layout_marginRight="@dimen/first_icon_margin_right"
+            android:src="@drawable/ic_2_forum" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/first_bbs_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/first_bbs_title"
+                style="@style/first_item_title"
+                android:text="@string/first_gree_bbs" />
+
+            <TextView
+                style="@style/first_item_des"
+                android:layout_below="@id/first_bbs_title"
+                android:layout_toRightOf="@id/first_bbs_icon"
+                android:text="@string/first_gree_bbs_des" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        style="@style/layout_width_full"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/first_registr"
+            style="@style/btn_blue"
+            android:layout_width="0dp"
+            android:layout_marginLeft="@dimen/first_btn_margin"
+            android:layout_marginRight="@dimen/first_btn_margin"
+            android:layout_weight="1"
+            android:onClick="registerClick"
+            android:text="@string/register"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/first_login"
+            style="@style/btn_blue"
+            android:layout_width="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="@dimen/first_btn_margin"
+            android:layout_weight="1"
+            android:onClick="loginClick"
+            android:text="@string/login"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

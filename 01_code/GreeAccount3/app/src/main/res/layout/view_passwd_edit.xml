@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_width_full"
+    android:orientation="horizontal"
+    android:background="@drawable/btn_gray_rect_bg">
+
+    <com.gree.greeaccount.widget.PassWdFilterEditText
+        android:id="@+id/passwd_text"
+        style="@style/edit"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_margin="0dp"
+        android:layout_toLeftOf="@+id/passwd_ckb"
+        android:maxLength="30"
+        android:background="@null"
+        android:inputType="textPassword"
+        android:hint="@string/input_pwd" />
+
+    <CheckBox
+        android:id="@+id/passwd_ckb"
+        style="@style/layout_wrap"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/edt_btn_margin_lr"
+        android:layout_marginStart="@dimen/edt_btn_margin_lr"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:button="@drawable/checkbox_passwd_selector" />
+
+</LinearLayout>

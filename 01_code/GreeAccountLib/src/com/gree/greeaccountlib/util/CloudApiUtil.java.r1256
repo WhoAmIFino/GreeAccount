@@ -1,0 +1,369 @@
+package com.gree.greeaccountlib.util;
+
+import android.content.Context;
+import android.util.Log;
+
+import com.gree.greeaccountlib.asynctask.ApiAsyncTask;
+import com.gree.greeaccountlib.asynctask.ApiAsyncTask.CloudApiBackListener;
+import com.gree.greeaccountlib.bean.ReqDataBean;
+import com.gree.greeaccountlib.bean.UserInfoBean;
+import com.gree.greeaccountlib.common.RequestType;
+import com.gree.greeaccountlib.data.DatabaseManager;
+
+/**
+ * 所有业务接口类
+ * 
+ * @author 850305
+ *
+ */
+public class CloudApiUtil {
+	private String TAG = getClass().getSimpleName();
+
+	private static CloudApiUtil mCloudApiUtil;
+
+	public static CloudApiUtil getInstance() {
+		if (mCloudApiUtil == null) {
+			mCloudApiUtil = new CloudApiUtil();
+		}
+		return mCloudApiUtil;
+	}
+
+	public CloudApiUtil() {
+	}
+
+	/**
+	 * 请求手机短信验证码(获取短信验证码)
+	 * 
+	 * @param ctx
+	 *            :上下文
+	 * @param phone
+	 *            ：手机号码
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+	public void startGetSmsCode(Context ctx, String phone,
+			CloudApiBackListener cl) {
+		Log.i(TAG, "startGetSmsCode");
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setPhone(phone);
+		new ApiAsyncTask(ctx, cl, RequestType.GET_SMS_CODE).execute(dataBean);
+
+	}
+
+	/**
+	 * 验证短信验证码
+	 * 
+	 * @param ctx
+	 * @param phone
+	 *            ：手机号
+	 * @param smsCode
+	 *            ：验证码
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+	public void startVerifySmsCode(Context ctx, String phone, String smsCode,
+			CloudApiBackListener cl) {
+		Log.i(TAG, "startVerifySmsCode");
+		ReqDataBean dataBean = new ReqDataBean();
+		// dataBean.setPhone(phone);
+		dataBean.setRequestId(SharedPreferencesUtil.getRequestId(ctx, phone));
+		dataBean.setSmsCode(smsCode);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_VERIFY_MOBILE_PHONE)
+				.execute(dataBean);
+
+	}
+
+	/**
+	 * 通过账号注销
+	 * 
+	 * @param ctx
+	 * @param name
+	 *            ：手机号
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+	public void startLogout(Context ctx, String name, CloudApiBackListener cl) {
+		LogUtils.i(TAG, "startLogout  name : " + name);
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setName(name);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_LOGOUT).execute(dataBean);
+
+	}
+
+	/**
+	 * 注销当前账号
+	 * 
+	 * @param ctx
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+	public void startLogoutCurUser(Context ctx, CloudApiBackListener cl) {
+		String name = DatabaseManager.getCurrentName(ctx);
+		LogUtils.i(TAG, "startLogout current name : " + name);
+		startLogout(ctx, name, cl);
+	}
+
+	/**
+	 * 登录
+	 * 
+	 * @param ctx
+	 * @param name
+	 *            ：用戶名：手机号或者邮箱号
+	 * @param pwd
+	 *            ：登录密码
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+
+	public void startLogin(Context ctx, String name, String pwd,
+			CloudApiBackListener cl) {
+		LogUtils.i(TAG, "startLogin");
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setName(name);
+		dataBean.setPassword(pwd);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_LOGIN).execute(dataBean);
+	}
+
+	/**
+	 * 通过手机号注册
+	 * 
+	 * @param ctx
+	 * @param pwd
+	 *            ：密码
+	 * @param phone
+	 *            ：手机号
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+	public void startRegisterByPhone(Context ctx, String pwd, String phone,
+			CloudApiBackListener cl) {
+		Log.i(TAG, "startRegister");
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setName(phone);
+		dataBean.setPassword(pwd);
+		dataBean.setPhone(phone);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_REGISTER_PHONE)
+				.execute(dataBean);
+
+	}
+
+	/**
+	 * 通过邮箱号注册
+	 * 
+	 * @param ctx
+	 * @param pwd
+	 *            ：密码
+	 * @param phone
+	 *            ：邮箱号
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+	public void startRegisterByEmail(Context ctx, String pwd, String email,
+			CloudApiBackListener cl) {
+		Log.i(TAG, "startRegister");
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setName(email);
+		dataBean.setPassword(pwd);
+		dataBean.setEmail(email);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_REGISTER_EMAIL)
+				.execute(dataBean);
+
+	}
+
+	/**
+	 * 获取当前登录的用户信息：从服务器上获取最新的用户信息
+	 * 
+	 * @param ctx
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+
+	public void startGetCurUserInfo(Context ctx, CloudApiBackListener cl) {
+		String name = DatabaseManager.getCurrentName(ctx);
+		LogUtils.i(TAG, "startGetCurUserInfo current name : " + name);
+		startGetUserInfo(ctx, name, cl);
+	}
+
+	/**
+	 * 根据手机号获取用户信息
+	 * 
+	 * @param ctx
+	 * @param phone
+	 *            :手机号码
+	 * @param cl
+	 *            ：返回结果的接口
+	 */
+	public void startGetUserInfo(Context ctx, String name,
+			CloudApiBackListener cl) {
+		Log.i(TAG, "startGetUserInfo");
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setName(name);
+		new ApiAsyncTask(ctx, cl, RequestType.GET_GET_USERINFO)
+				.execute(dataBean);
+	}
+
+	/**
+	 * 更新当前账号的用户信息
+	 */
+	public void startUpdateCurUserInfo(Context ctx, String email,
+			CloudApiBackListener cl) {
+		String name = DatabaseManager.getCurrentName(ctx);
+		LogUtils.i(TAG, "startUpdateCurUserInfo current phone : " + name);
+		startUpdateUserInfo(ctx, name, email, cl);
+	}
+
+	/**
+	 * 更新用户信息
+	 * 
+	 * @param ctx
+	 * @param name
+	 * @param email
+	 * @param cl
+	 * @param requestType
+	 */
+	public void startUpdateUserInfo(Context ctx, String name, String email,
+			CloudApiBackListener cl) {
+		Log.i(TAG, "startUpdateUserInfo");
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setName(name);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_UPDATE_USERINFO)
+				.execute(dataBean);
+
+	}
+
+	/**
+	 * 通过邮箱修改密码(邮箱找回密码)
+	 * 
+	 * @param ctx
+	 * @param name
+	 * @param email
+	 * @param cl
+	 */
+	public void startReSetPwdByEmail(Context ctx, String name, String email,
+			CloudApiBackListener cl) {
+		Log.i(TAG, "startReSetPwdByEmail");
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setEmail(email);
+		dataBean.setName(name);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_REQUEST_PASSWORD_RESET)
+				.execute(dataBean);
+	}
+
+	/**
+	 * 安全修改密码（通过旧密码修改密码）
+	 * 
+	 * @param ctx
+	 * @param name
+	 * @param oldPwd
+	 * @param newPwd
+	 * @param cl
+	 */
+	public void startReSetPwdByOld(Context ctx, String name, String oldPwd,
+			String newPwd, CloudApiBackListener cl) {
+		Log.i(TAG, "startReSetPwdByOld");
+
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setOldPassword(oldPwd);
+		dataBean.setNewPassword(newPwd);
+		dataBean.setName(name);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_UPDATE_PASSWORD)
+				.execute(dataBean);
+	}
+
+	/**
+	 * 通过手机验证修改密码
+	 * 
+	 * @param ctx
+	 * @param phone
+	 * @param newPwd
+	 * @param smsCode
+	 * @param cl
+	 */
+	public void startReSetPwdByPNumber(Context ctx, String phone,
+			String newPwd, String smsCode, CloudApiBackListener cl) {
+		// Log.i(TAG, "startReSetPwdByPNumber phone: " + phone);
+		String name = DatabaseManager.getNameByPhone(ctx, phone);
+		// Log.i(TAG, "startReSetPwdByPNumber name: " + name);
+		ReqDataBean dataBean = new ReqDataBean();
+		dataBean.setPhone(phone);
+		dataBean.setPassword(newPwd);
+		dataBean.setName(name);
+		String userid = DatabaseManager.getUserIdByName(ctx, name);
+		// Log.i(TAG, "startReSetPwdByPNumber userid: " + userid);
+		dataBean.setId(userid);
+		dataBean.setRequestId(SharedPreferencesUtil.getRequestId(ctx, phone));
+		dataBean.setSmsCode(smsCode);
+		new ApiAsyncTask(ctx, cl, RequestType.POST_RESET_PASSWORD)
+				.execute(dataBean);
+	}
+
+	/**
+	 * 判断当前账号是否登录
+	 * 
+	 * @param ctx
+	 * @return
+	 */
+	public boolean isLoginCurUser(Context ctx) {
+		String name = DatabaseManager.getCurrentName(ctx);
+		LogUtils.i(TAG, "isLoginCurUser current name : " + name);
+		return isLogin(ctx, name);
+	}
+
+	/**
+	 * 根据手机号码判断是否登录
+	 * 
+	 * @param ctx
+	 * @param name
+	 * @return
+	 */
+	public boolean isLogin(Context ctx, String name) {
+		int isLogin = 0;
+		if (null != name && !name.equals("")) {
+			isLogin = DatabaseManager.getIsLoginByName(ctx, name);
+		}
+
+		return (isLogin == 1) ? true : false;
+	}
+
+	/**
+	 * 获取当前登录的用户信息：从本地数据库获取用户信息
+	 * 
+	 * @param ctx
+	 * @return
+	 */
+	public UserInfoBean readlocalUserInfo(Context context) {
+		String name = DatabaseManager.getCurrentName(context);
+		LogUtils.i(TAG, "getCurUserInfo current phone : " + name);
+		return DatabaseManager.getUserInfoByName(context, name);
+	}
+
+	/**
+	 * 获取当前私钥
+	 * 
+	 * @param ctx
+	 * @return
+	 */
+	public String getCurrentGKey(Context context) {
+		String name = DatabaseManager.getCurrentName(context);
+		LogUtils.i(TAG, "getCurrentGKey current phone : " + name);
+		String gKey = DatabaseManager.getGKeyByName(context, name);
+		LogUtils.i(TAG, "getCurrentGKey current GKey : " + gKey);
+		return gKey;
+	}
+
+	/**
+	 * 获取当前的token
+	 * 
+	 * @param ctx
+	 * @return
+	 */
+
+	public String getCurrentToken(Context context) {
+		String name = DatabaseManager.getCurrentName(context);
+		LogUtils.i(TAG, "getCurrentGKey current name : " + name);
+		String token = DatabaseManager.getTokenByName(context, name);
+		LogUtils.i(TAG, "getCurrentGKey current token : " + token);
+		return token;
+	}
+
+}

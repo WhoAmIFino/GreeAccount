@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/update_pwd_title_margintop"
+        android:text="@string/input_bind_phone"
+        android:textColor="@color/gree_gray"
+        android:textSize="@dimen/text_des_size" />
+
+    <com.gree.greeaccount.widget.EmojiFilterEditText
+        android:id="@+id/register_phone_et"
+        style="@style/edit"
+        android:layout_marginTop="@dimen/update_pwd_title_marginbottom"
+        android:hint="@string/bind_phone"
+        android:inputType="numberDecimal"
+        android:maxLength="11" />
+
+    <com.gree.greeaccount.widget.SmsEditView
+        android:id="@+id/register_sms"
+        style="@style/edt_layout"
+        app:alert="@string/no_registered"
+        app:filter_registered="true" />
+
+    <TextView
+        style="@style/checkbox_lable"
+        android:layout_marginStart="@dimen/btn_margin_lr"
+        android:layout_marginTop="@dimen/checkbox_margintop"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:onClick="emailClick"
+        android:text="@string/find_pwd_by_email" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="nextClick"
+        android:text="@string/next_step"
+        android:textAllCaps="false" />
+
+</LinearLayout>

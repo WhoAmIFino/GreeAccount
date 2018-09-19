@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+        <item name="android:homeAsUpIndicator">@drawable/ic_nav_back</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!--
+        <item name="android:windowTranslucentNavigation">true</item>
+        -->
+        <item name="android:colorPrimary">@color/actionbar_bg</item>
+        <item name="android:colorPrimaryDark">@color/actionbar_bg</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:actionBarStyle">@style/Theme.ActionBar</item>
+        <item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>
+        <item name="android:textAppearance">@style/MyTextStyle</item>
+        <!---->
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!---->
+</style>
+
+    <style name="MyTextStyle" parent="android:style/TextAppearance.Material">
+        <!--
+        <item name="android:typeface">qh50</item>
+        -->
+    </style>
+
+    <style name="MenuTextStyle">
+        <item name="android:textSize">@dimen/text_menu_size</item>
+    </style>
+
+    <style name="Theme.ActionBar" parent="@android:style/Widget.Material.ActionBar.Solid">
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+    </style>
+
+    <style name="ActionBarTitle" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/gree_black</item>
+        <item name="android:textSize">@dimen/text_actionbar_title_size</item>
+    </style>
+
+    <style name="loadDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 模糊 -->
+    </style>
+</resources>

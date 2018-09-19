@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_full"
+    android:background="@drawable/gui_common_dialog_corners"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/dialog_title"
+        android:text="@string/documents_type" />
+
+    <RadioGroup
+        android:id="@+id/doc_rdg"
+        style="@style/layout_width_full"
+        android:orientation="vertical"
+        android:paddingLeft="27dp"
+        android:paddingRight="27dp">
+
+        <RadioButton
+            android:id="@+id/doc_shenfenzheng"
+            style="@style/radio_style"
+            android:button="@null"
+            android:checked="true"
+            android:drawableRight="@drawable/gui_common_btn_radio"
+            android:text="@string/doc_shenfenzheng" />
+
+        <RadioButton
+            android:id="@+id/doc_g_a_t_jiumingneidi"
+            style="@style/radio_style"
+            android:button="@null"
+            android:drawableRight="@drawable/gui_common_btn_radio"
+            android:text="@string/doc_g_a_t_jiumingneidi" />
+
+        <RadioButton
+            android:id="@+id/doc_g_a_t_shenfenzheng"
+            style="@style/radio_style"
+            android:button="@null"
+            android:drawableRight="@drawable/gui_common_btn_radio"
+            android:text="@string/doc_g_a_t_shenfenzheng" />
+
+        <RadioButton
+            android:id="@+id/doc_huzhao"
+            style="@style/radio_style"
+            android:button="@null"
+            android:drawableRight="@drawable/gui_common_btn_radio"
+            android:text="@string/doc_huzhao" />
+
+        <RadioButton
+            android:id="@+id/doc_junren_jincha"
+            style="@style/radio_style"
+            android:button="@null"
+            android:drawableRight="@drawable/gui_common_btn_radio"
+            android:text="@string/doc_junren_jincha" />
+    </RadioGroup>
+
+</LinearLayout>

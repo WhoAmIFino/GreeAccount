@@ -1,0 +1,42 @@
+package com.gree.greeaccountlib.common;
+
+/**
+ * 通用常量
+ * @author 850305
+ *
+ */
+public class GConstants {
+
+	/**
+	 *  启动手机注册账号界面的action
+	 */
+	public static final String LAUNCH_ACTIVITY_REGISTER_URI = "com.gree.intent.action.REGISTER";
+	
+	/**
+	 *  启动邮箱注册账号界面的action
+	 */
+	public static final String LAUNCH_ACTIVITY_REGISTER_BYEMAIL_URI = "com.gree.intent.action.REGISTER_BYEMAIL";
+	
+	/**
+	 *  启动登录界面的action
+	 */
+	public static final String LAUNCH_ACTIVITY_LOGIN_URI = "com.gree.intent.action.LOGIN";
+	
+	/**
+	 *  启动旧密码修改密码界面的action
+	 */
+	public static final String LAUNCH_ACTIVITY_RESETPWD_BYOLDPWD_URI = "com.gree.intent.action.RESET_PWD_BY_OLDPWD";// 安全修改密码
+	
+	/**
+	 *  启动格力账号主界面的action
+	 */
+	public static final String LAUNCH_ACTIVITY_ACCOUNT_MAIN_URI = "com.gree.intent.action.ACCOUNT_MAIN";// 主界面
+	// 远程启动activity的uri
+	public static final String SCHEME_URI = "gaccount://com.gree.greeaccount:8888/test";
+	
+	/**
+	 *  跨进程界面之间通信的广播
+	 */
+	public static final String BROADCAST_ACTION_LAUNCH_UI = "com.gree.greeaccountlib.launchui.breceiver";
+
+}

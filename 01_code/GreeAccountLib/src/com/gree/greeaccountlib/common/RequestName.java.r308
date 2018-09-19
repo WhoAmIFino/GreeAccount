@@ -1,0 +1,18 @@
+package com.gree.greeaccountlib.common;
+
+public class RequestName {
+
+	public static final String GET_REQUESTSMSCODE = "RequestSmsCode";// 获取短信验证码
+	public static final String POST_VERIFY_MOBILEPHONE = "VerifyMobilePhone";// 验证短信验证码
+	public static final String POST_USERS = "Users";// 手机/邮箱注册
+	public static final String POST_REQUEST_EMAIL_VERIFY = "RequestEmailVerify";// 邮箱认证
+	public static final String POST_LOGIN = "Login";// 登陆
+	public static final String POST_RESET_PASSWORD = "ResetPassword";// 验证收到的验证码并重置密码
+	public static final String POST_REQUEST_PASSWORD_RESET = "RequestPasswordReset";// 邮箱找回密码
+	public static final String GET_USERS = "Users/";// 获取用户信息Users
+	public static final String POST_USERS_UPDATE = "Users/";// 更新用户信息Users
+	public static final String POST_UPDATE_PASSWORD = "Users/2/UpdatePassword";// 安全修改密码
+	public static final String DELETE_USERS = "Users/用户名";// 删除用户（测试专用）
+
+	
+}

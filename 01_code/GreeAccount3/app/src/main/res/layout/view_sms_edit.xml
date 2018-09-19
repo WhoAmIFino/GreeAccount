@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_width_full"
+    android:orientation="horizontal"
+    android:background="@drawable/btn_gray_rect_bg">
+
+    <com.gree.greeaccount.widget.EmojiFilterEditText
+        android:id="@+id/smscode_et"
+        style="@style/edit"
+        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:background="@null"
+        android:hint="@string/input_sms_code"
+        android:maxLength="6"
+        android:inputType="numberSigned" />
+
+    <View
+        android:layout_width="2px"
+        android:layout_height="match_parent"
+        android:background="@color/gree_gray" />
+
+    <TextView
+        android:id="@+id/getsmscode_btn"
+        style="@style/layout_height_full"
+        android:gravity="center"
+        android:paddingLeft="@dimen/edt_btn_margin_lr"
+        android:paddingRight="@dimen/edt_btn_margin_lr"
+        android:text="@string/get_sms_code"
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:textColor="@drawable/btn_blue_textcolor_selector_getcode"
+        android:textSize="@dimen/text_sms_code_text_size" />
+</LinearLayout>

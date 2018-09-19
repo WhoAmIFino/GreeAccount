@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/root_padding_lr"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txv"
+            style="@style/txv"
+            android:textSize="@dimen/text_des_size"/>
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/notic_check_cb"
+        style="@style/checkbox"
+        android:layout_margin="@dimen/checkbox_margintop"
+        android:checked="true"
+        android:text="@string/has_read_agree_agreement" />
+</LinearLayout>

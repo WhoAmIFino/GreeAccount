@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_full"
+    android:background="@drawable/gui_common_dialog_corners"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/dialog_title_margin"
+        android:text="@string/select_city"
+        android:textColor="@color/gree_black"
+        android:textSize="@dimen/dialog_title_size" />
+
+    <RelativeLayout
+        style="@style/layout_width_full"
+        android:paddingLeft="?android:attr/listPreferredItemPaddingStart"
+        android:paddingRight="?android:attr/listPreferredItemPaddingStart">
+
+        <TextView
+            android:id="@+id/city_dialog_pro_txv"
+            style="@style/txv"
+            android:layout_alignParentLeft="true"
+            android:text="@string/please_select"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/city_dialog_city_txv"
+            style="@style/txv"
+            android:layout_toRightOf="@id/city_dialog_pro_txv"
+            android:text="@string/please_select"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/city_dialog_district_txv"
+            style="@style/txv"
+            android:layout_marginLeft="@dimen/btn_margin_lr"
+            android:layout_toRightOf="@id/city_dialog_city_txv"
+            android:text="@string/please_select"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/city_dialog_del"
+            style="@style/layout_wrap"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:onClick="del"
+            android:padding="10dp"
+            android:src="@drawable/ic_list_delete" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/city_listview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/city_select_h"
+        android:divider="@color/gree_gray"
+        android:dividerHeight="0dp"
+        android:scrollbars="none" />
+
+</LinearLayout>

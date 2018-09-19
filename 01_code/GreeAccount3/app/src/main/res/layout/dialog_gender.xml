@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_full"
+    android:background="@drawable/gui_common_dialog_corners"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/dialog_title"
+        android:text="@string/select_sex" />
+
+
+    <RadioGroup
+        style="@style/layout_width_full"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/gender_man"
+            style="@style/radio_style"
+            android:text="@string/male_text" />
+
+        <RadioButton
+            android:id="@+id/gender_woman"
+            style="@style/radio_style"
+            android:text="@string/female_text" />
+    </RadioGroup>
+
+</LinearLayout>

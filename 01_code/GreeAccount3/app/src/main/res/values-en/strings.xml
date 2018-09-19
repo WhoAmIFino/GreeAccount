@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="greeaccount_read_permission">com.gree.provider.account.user.read</string>
+    <string name="greeaccount_write_permission">com.gree.provider.account.user.write</string>
+    <string name="address_write_permission">com.gree.provider.account.address.write</string>
+    <string name="address_read_permission">com.gree.provider.account.address.read</string>
+    <string name="api_permission">com.gree.greeaccount.api</string>
+
+    <string name="app_name">Gree Account</string>
+    <string name="cancel">Cancel</string>
+    <string name="agree">Agree</string>
+    <string name="login">Login</string>
+    <string name="confim">OK</string>
+    <string name="send">Send</string>
+    <string name="register">Registered</string>
+    <string name="ok">Complete</string>
+    <string name="next_step">Next</string>
+    <string name="male_text">Male</string>
+    <string name="female_text">Female</string>
+    <string name="net_error">Abnormal</string>
+    <string name="grally_error">Gallery is unavailable</string>
+    <string name="camera_error">Camera is not available</string>
+    <string name="no_emoji">Cannot enter emoticons</string>
+    <string name="no_chinese">Do not enter Chinese</string>
+    <string name="max_length">The maximum length has been reached</string>
+    <string name="phone_error">Incorrect cell phone number format</string>
+    <string name="rsp_token_error"> authentication token is invalid, please log in new </string>
+    <string name="rsp_token_invalid">Invalid authentication information</string>
+    <string name="rsp_sms_error">Invalid verification code</string>
+    <string name="rsp_account_no_ex"> user does not exist </string>
+    <string name="rsp_to_auth_error">Authentication failed</string>
+    <string name="rsp_auth_error"> different user unauthorized operation </string>
+    <string name="rsp_phone_check_error">Mobile phone number verification is inconsistent</string>
+    <string name="rsp_phone_has_bind"> phone number is bound </string>
+    <string name="rsp_token_reflash"> invalid refresh token </string>
+    <string name="rsp_email_has_bind"> mailbox is bound </string>
+    <string name="rsp_account_error">inconsistent account information, can not modify the device nickname </string>
+    <string name="rsp_logout">device forced exit</string>
+    <string name="rsp_pwd_reset">Password has been reset</string>
+    <string name="rsp_account_name_error">Incorrect username format</string>
+    <string name="rsp_account_name_only_one">username can only be modified once</string>
+    <string name="logout_alert"> login exception </string>
+    <string name="logout_alert_content">Your Gree account\"<xliff:g id="account">%1$s</xliff:g>\" to <xliff:g id="time">%2$ s</xliff:g> has exceeded the login limit. If this is not your operation, your password is likely to have leaked. Please log in as soon as possible to change your password on Gree Mobile Account or visit http://phone.gree.com through your browser to log in to your account for operation. </string>
+    <string name="logout_num_out_alert_content">Your Gree account\"<xliff:g id="account">%1$s</xliff:g>\" at <xliff:g id="time">%2$ s</xliff:g> was asked to log out. If this is not your operation, your password is likely to have been compromised. Please log in as soon as possible after logging in Gree mobile phone account to change your password or visit http://phone.gree.com through your browser to log in to your account for operation. </string>
+    <string name="logout_pwd_reset_alert_content">Your Gree Account\"<xliff:g id="account">%1$s</xliff:g>\" to <xliff:g id="time">%2$ s</xliff:g> The password was modified. If this is not your operation, your password is likely to have been compromised. Please log in as soon as possible after logging in Gree mobile phone account to change your password or visit http://phone.gree.com through your browser to log in to your account for operation. </string>
+    <string name="pwd_reset_alert_content">Your password has been modified</string>
+    <string name="get_auth_code"> Get Verification Code </string>
+    <string name="reget_auth_code">reacquire</string>
+    <string name="permissions_title"> program in the process of running, you need to use the read SMS verification code and get the phone serial number permissions, jump to get </string>
+    <string name="no_app_active">No corresponding application</string>
+
+    <!--alert notice-->
+    <string name="user_agreement"> user agreement </string>
+    <string name="alert_notice_item_1">1. This software needs to connect to the network during the use of the software, and the resulting traffic charges will be charged between the operators. For details, please consult your operator. </string>
+    <string name="alert_notice_item_2">2. During the use of this software, your geographical location and contact information will be collected under the premise of your consent to provide better life services. </string>
+    <string name="alert_notice_item_3"> 3. By using this software, you agree to accept the Gree User License Agreement and Gree Privacy Policy. </string>
+    <string name="alert_notice_item_3_start">3. Use the software that you agree to accept </string>
+    <string name="gree_user_agreement"> Gree User License Agreement</string>
+    <string name="and"> and </string>
+    <string name="gree_privacy_policy"> Gree Privacy Policy</string>
+    <string name="date_fomat_year">year</string>
+    <string name="date_fomat_moth"> month </string>
+    <string name="date_fomat_day">day</string>
+
+    <!--first-->
+    <string name="first_title"> Login account can enjoy more services </string>
+    <string name="first_gree_cloud"> Gree Cloud </string>
+    <string name="first_gree_cloud_des"> coming soon... </string>
+    <string name="first_gree_findphone"> Find phone </string>
+    <string name="first_gree_findphone_des"> phone lost remote lock </string>
+    <string name="first_gree_feedback"> After-sales service </string>
+    <string name="first_gree_feedback_des">mobile phone sale problem dedicated service </string>
+    <string name="first_gree_bbs"> Gree Forum </string>
+    <string name="first_gree_bbs_des"> master the latest Gree mobile phone information </string>
+
+    <!--register-->
+    <string name="password_rule">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="account_name_rule">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="register_gree_account">Register Gree Account</string>
+    <string name="input_phone"> enter the phone number </string>
+    <string name="input_email"> enter the mailbox number </string>
+    <string name="input_account">mobile phone number/mailbox number/username</string>
+    <string name="has_read_agree_agreement"> I have read and agree</string>
+    <string name="user_register_agreement">user registration agreement</string>
+    <string name="input_sms_code">enter verification code</string>
+    <string name="get_sms_code"> Get Verification Code </string>
+    <string name="pwd_set">password setting</string>
+    <string name="pwd_type"> to improve account security, please mix letters, numbers, symbols </string>
+    <string name="pwd_lenght"> password length requires 6-30 characters </string>
+    <string name="input_pwd">enter password</string>
+    <string name="reigster_problem"> registration encountered a problem </string>
+    <string name="has_registered"> account has been registered </string>
+    <string name="no_registered"> account is not registered </string>
+    <string name="confim_pwd">reconfirm password</string>
+    <string name="pwd_error">Incorrect password format</string>
+    <string name="pwd_error_to_mush"> error is too much, please wait 30 seconds</string>
+    <string name="pwd_error_foget">You may have forgotten, take a break</string>
+    <string name="confim_pwd_error">Confirm password is incorrect</string>
+    <string name="sms_code_error">Invalid verification code format</string>
+    <string name="agree_the_agreement">Please check the user registration agreement</string>
+    <string name="login_gree_account"> Login Gree Account </string>
+    <string name="login_register_width_problem"> Login / Registration encountered a problem </string>
+    <string name="login_width_problem"> login encountered a problem?</string>
+
+    <!--update pwd-->
+    <string name="input_new_pwd">Please enter a new password</string>
+    <string name="input_bind_phone"> Please enter the bound phone number </string>
+    <string name="find_pwd_by_email"> mailbox to retrieve the password </string>
+    <string name="input_bind_email">Please enter the bound mailbox number</string>
+    <string name="email_error">Incorrect mailbox format</string>
+    <string name="email_send_ok_title">Activation Notification</string>
+    <string name="email_send_ok_tip_start">We have emailed to"</string>
+    <string name="email_send_ok_tip"> We have sent a verification email to the mailbox "<xliff:g id="email">%1$s</xliff:g>". Click on the email link to verify.</string>
+    <string name="i_know"> know </string>
+    <string name="find_pwd_by_phone"> use phone to retrieve </string>
+
+    <!--problem-->
+    <string name="problem_find_pwd"> Retrieve password </string>
+    <string name="problem_find_pwd_des"> retrieved by binding the security data of the account </string>
+    <string name="problem_common">Frequently Asked Questions </string>
+    <string name="problem_common_des">provide common problems and feedback </string>
+    <string name="problem_appeal">Account complaint </string>
+    <string name="problem_appeal_des"> solve the problem can not be retrieved password or account exception </string>
+    <string name="faceback_error">Please check the existence of after-sales service application </string>
+
+    <!--main-->
+    <string name="no_nickname"> not filled nickname </string>
+    <string name="gree_service"> Gree service </string>
+    <string name="account_set">Account settings</string>
+    <string name="user_info">Personal information</string>
+    <string name="login_manager"> Login management </string>
+    <string name="account_safe">Account security</string>
+    <string name="other">Other </string>
+    <string name="set">Settings</string>
+    <string name="logout"> exit account </string>
+    <string name="foget_pwd">Forgot password</string>
+    <string name="pwd_not_right">password error</string>
+    <string name="pwd_enter_right">Please enter the correct password</string>
+    <string name="pwd">password</string>
+    <string name="input_account_pwd">Please enter the account password </string>
+    <string name="nick_shield"> is blocked</string>
+
+    <string name="alert_clound_error">Provide better data protection, please open gree cloud, click open </string>
+    <string name="alert_findphone_error">What to do if you lose your phone? Find the phone function to help you, click to open </string>
+    <string name="alert_nickname_error"> You have not nicknamed, new friends of the forum will not know you, click settings </string>
+    <string name="alert_name_error">Account name is not yet! Click on the settings quickly </string>
+    <string name="alert_head_error"> is not the same as others, to have a face, quickly click Settings </string>
+    <string name="alert_userinfo_error"> Your data is not yet complete, click Settings </string>
+    <string name="alert_auth_error">You don\'t have a real name certificate yet, click Settings </string>
+    <string name="alert_email_error">bind secure mailbox, can help you to better protect the account, click on settings </string>
+    <string name="alert_login_error"> Caution! Your account is logged in on another device, click to view details </string>
+    <string name="alert_nick_auth"> nicknames are used in sensitive words and are flagged or blocked by forum managers</string>
+    <string name="alert_head_auth"> Avatar is using sensitive images, blocked by forum managers or forum managers</string>
+
+    <!--userinfo-->
+    <string name="account_info">account information</string>
+    <string name="account_name">Account name</string>
+    <string name="account_name_error">Account name format is incorrect</string>
+    <string name="medal"> Medal</string>
+    <string name="user_base_info"> basic information </string>
+    <string name="nick_name">Nickname</string>
+    <string name="sex">Sex </string>
+    <string name="birthday">Birthday </string>
+    <string name="residence">Residence</string>
+    <string name="no_edit"> not filled in </string>
+    <string name="no_get"> did not receive </string>
+    <string name="medal_num"> </string>
+    <string name="edt_head">Edit avatar</string>
+    <string name="taking_pictures">Photos </string>
+    <string name="from_grally"> select from the gallery </string>
+    <string name="no_select"> not selected </string>
+    <string name="select_plac">Select Region</string>
+    <string name="select_sex">Please select gender </string>
+    <string name="account_name_des_1"> Gree account name can be used for login and appeal, can only be set once </string>
+    <string name="account_name_des_2"> account name set length 6-30 letter </string>
+    <string name="nick_name_des_1"> nickname length 3-30 letters, 2-15 characters </string>
+    <string name="nick_name_des_2"> nickname can only be changed once in three months</string>
+    <string name="nick_name_hint">Please enter nickname</string>
+    <string name="nick_name_error">Incorrect nickname format</string>
+    <string name="birthday_error">Birthday cannot be greater than the current date</string>
+
+    <string name="auto_location_failue"> positioning failed </string>
+    <string name="please_select">Please select</string>
+    <string name="residence_error"> address information is incomplete </string>
+    <string name="auto_location_prmis"> Auto locate will get your location information permission, click OK to jump </string>
+    <string name="save">Save</string>
+
+    <string name="auto_location"> automatic positioning </string>
+    <string name="address_select">Manually select</string>
+    <string name="select_city">Select Region</string>
+    <string name="city">Province/City/District</string>
+    <string name="address_info">Detail Area </string>
+    <string name="detail_info">details</string>
+
+    <!--medal-->
+    <string name="real_name_auth"> real-name authentication </string>
+    <string name="bind_e_email"> bind e-mail </string>
+    <string name="bind_e_phone"> bind mobile device </string>
+    <string name="no_bind"> did not receive </string>
+    <string name="has_bind">existing</string>
+
+    <!--set-->
+    <string name="check_version">Check for Updates</string>
+    <string name="download_app">Download</string>
+    <string name="FAQ">Frequently Asked Questions</string>
+    <string name="version"> Gree Account \nv</string>
+
+    <!--devices-->
+    <string name="devices_title"> device list </string>
+    <string name="device_des"> This shows the device your account has logged in to, allowing up to 5 devices to log in at the same time. </string>
+    <string name="current_device"> current device </string>
+    <string name="login_time"> login time &#160;&#160;</string>
+    <string name="logout_time"> exit time &#160;&#160;</string>
+    <string name="device_name_error">Incorrect name format</string>
+
+    <!--safe-->
+    <string name="have_not_bind"> Not bound </string>
+    <string name="bind_manager">Binding Management</string>
+    <string name="bind_phone"> Bind mobile phone </string>
+    <string name="bind_email">Bind mailbox</string>
+    <string name="pwd_manager"> Password Management </string>
+    <string name="update_pwd">Change password</string>
+    <string name="find_pwd"> Retrieve password </string>
+    <string name="auth_type"> Authentication Method</string>
+    <string name="real_auth"> Real-name authentication </string>
+    <string name="no_auth">Uncertified</string>
+    <string name="real_name"> Real Name </string>
+    <string name="documents_type">Document Type</string>
+    <string name="documents_num"> Badge Number </string>
+    <string name="doc_shenfenzheng">ID Card</string>
+    <string name="documents_type_error">document type can not be empty</string>
+    <string name="documents_num_error"> certificate number can not be empty </string>
+    <string name="real_name_error">real name can not be empty</string>
+    <string name="doc_g_a_t_jiumingneidi">Hong Kong, Macao, and Taiwan Residents Passes </string>
+    <string name="doc_g_a_t_shenfenzheng"> Hong Kong, Macao and Taiwan ID </string>
+    <string name="doc_huzhao">Passport</string>
+    <string name="doc_junren_jincha"> Soldier ID / Police ID </string>
+    <string name="auth_req_success">Congratulations, you have submitted successfully</string>
+    <string name="authing"> auditing </string>
+    <string name="auth_success"> audit through </string>
+    <string name="has_auth"> authenticated</string>
+    <string name="auth_error"> failed </string>
+    <string name="auth_failue"> audit does not pass, please test and submit again </string>
+    <string name="subim_two">submitted again</string>
+    <string name="real_auth_safe_tips">We will protect your information according to law </string>
+
+
+
+    <!--real auth-->
+    <string name="real_auth_des_1">According to the mobile Internet application information service management regulations, the user is required to identity information authentication, we promise to strictly protect your personal information, will not be leaked to the outside;</string>
+    <string name="real_auth_des_2"> Real name authentication can be used for account complaints; </string>
+    <string name="real_auth_des_3"> Registration information is submitted only once and cannot be modified. Please fill it out carefully. </string>
+
+    <!--phone view-->
+    <string name="phone_view_des"> for login, reset password, and verify identity</string>
+    <string name="update_bind"> modify the binding </string>
+    <string name="phone_check_title"> will send an SMS to the phone number &#160;&#160;&#160;</string>
+    <string name="phone_check_des"> Mobile phone number has been disabled, need account complaint? </string>
+    <string name="email_view_des">This mailbox can be used to login account, retrieve password </string>
+    <string name="input_safe_email">Enter a safe mailbox</string>
+    <string name="sms_code_title"> SMS verification code </string>
+    <string name="bind_safe_email">bind secure mailbox</string>
+
+    <string name="old_pwd"> original password </string>
+    <string name="new_pwd">new password</string>
+
+    <!--sys apks version-->
+    <string name="net_error_check_version">Failed to get version</string>
+    <string name="net_error_get_apkurl">Failed to get the download address</string>
+    <string name="apks_loaddown_state">Downloading</string>
+    <string name="apks_version_tips">There is a new version, is it updated?</string>
+    <string name="apks_version_tips_title">Update tip</string>
+    <string name="apks_version_tips_btn_confirm">OK</string>
+    <string name="apks_version_tips_btn_cancel">Cancel</string>
+    <string name="apks_version_tips_btn_down">Download updates</string>
+    <string name="apks_newversion">New version</string>
+    <string name="apks_file_size">Size</string>
+    <string name="newest_version_tips">This is the latest version</string>
+
+    <!--deivce info-->
+    <string name="attention">Note </string>
+    <string name="device_att_des">If you do not recognize this device and think it is possible for someone to use your account to access it, please log out and change your password. </string>
+    <string name="device_logout_alert"> this operation will make the corresponding device\'s account automatically exit, continue? </string>
+    <string name="device_name"> device name &#160;&#160;&#160;</string>
+    <string name="device_type"> device model &#160;&#160;&#160;</string>
+    <string name="device_gps">Login Location&#160;&#160;&#160;</string>
+    <string name="device_login_time"> login time &#160;&#160;&#160;</string>
+    <string name="device_logout_time"> exit time &#160;&#160;&#160;</string>
+    <string name="refactor">Rename</string>
+    <string name="device_name_relu">name length 1-10 characters or 2-20 letters </string>
+    <string name="device_name_relu2"> can not use blank cells and emoji emoticons </string>
+
+    <string name="net_error_get_ccid"> obtain real-name authentication information </string>
+    <string name="net_error_deviceLogout"> force exit </string>
+    <string name="net_error_updateDeviceName">Change device name</string>
+    <string name="net_error_delAddress">delete address</string>
+    <string name="net_error_updateAddress"> modify the address </string>
+    <string name="net_error_updateResidence">Modify </string>
+    <string name="net_error_loginOut"> Exit </string>
+    <string name="net_error_restEmail">Modify Mailbox</string>
+    <string name="net_error_restPhone"> modify the phone number </string>
+    <string name="net_error_reflashToken">refresh token</string>
+    <string name="net_error_upLoadHead">Upload avatar</string>
+    <string name="net_error_UpdateUserBaseInfo"> modify user information </string>
+
+    <string name="net_error_getUserInfo"> Get user information </string>
+    <string name="net_error_restPwd">modify password</string>
+    <string name="net_error_checkPhoneRegister"> Verify that the phone is registered </string>
+    <string name="net_error_findPwdByEmail"> retrieve the password based on the mailbox </string>
+    <string name="net_error_findPwdByPhone"> retrieve password according to the phone </string>
+    <string name="net_error_login">Login</string>
+    <string name="net_error_register">Registration</string>
+    <string name="net_error_checkSmsCode"> Verification code </string>
+    <string name="net_error_reqSmsCode"> Get SMS verification code </string>
+
+    <string name="gree_user_protocols_title">Gree User Agreement</string>
+
+    <string name="gree_user_protocols_content">
+        <Data><![CDATA[<h1 style="text-align:center;width:100%">Gree User Registration Agreement</h1>
+Please carefully read and understand all rights and limitations stipulated in the User Registration Agreement (hereinafter referred to as "this Agreement"). Unless you accept clauses of this Agreement, do not register, log in, or use the related services involved in this Agreement. By registering, logging in, or using in any form of the related services involved in this Agreement, you are deemed to have accepted this Agreement, that is, you have agreed to all clauses of this Agreement. If you do not agree with any clauses of this Agreement, do not register, log in, or use the related services of this Agreement.  The Agreement forms a legal agreement between users and Gree Electric Appliances Inc. of Zhuhai (hereinafter referred to as "Gree").
+<br/>
+<br/><b>1. Service Content</b>
+<br/>1.1 Details about network services of Gree website are provided by Gree based on actual situations, including but not limited to enterprise services, games, and forums such as Gree\'s open platform and app store.
+<br/>1.2 Users understand and accept that Gree only provides related network services, and other related devices (such as PCs, mobile phones, and other facilities related to Internet or mobile Internet access) and expenses incurred by such services and devices (such as telephone and Internet fees for accessing the Internet and mobile phone fees for accessing the mobile Internet) are all borne by users.
+<br/>1.3 Users shall enter the account and password to log in to Gree accounts. To provide you with more convenient login services, if you have logged in to one Gree app using your Gree account through the mobile phone, Gree allows you to log in to other Gree apps by one click.
+<br/>1.4 In addition to the software and services provided by Gree, you can also log in using your Gree account to use the related services of Gree partners.
+<br/>
+<br/><b>2. Account and Password</b>
+<br/>2.1 Once you have successfully registered as a Gree user, you will obtain an account and a password. You are solely responsible for all your activities and events under your account. If you lost the control over your account and password due to your fault, you will be held solely accountable for any damage caused thereby to you, Gree, and any third party.
+<br/>2.2 You have the right to change your password at any time. You agree to immediately inform Gree if you discover any security vulnerability or illegal use of accounts.
+<br/>2.3 You agree not to use the account, user name, or password of other members at any time without authorization.
+<br/>
+<br/><b>3. Using Rules</b>
+<br/>3.1 When using the services, you shall comply with the related laws and regulations, including but not limited to the Constitution of the People\'s Republic of China, Criminal Law of the People\'s Republic of China, General Principles of Civil Law of the People\'s Republic of China, Contract Law of the People\'s Republic of China, Copyright Law of the People\'s Republic of China, Telecommunications Regulations of the People\'s Republic of China, Administration of Internet Information Services Procedures, Regulations on the Management of Internet Electronic Bulletin Service, Law of the People\'s Republic of China on Keeping Confidentiality of State Secrets, Regulations of the People\'s Republic of China on the Safety Protection of Computer Information Systems, Measures for Security Protection Administration of the International Networking of Computer Information Networks, Decision of the Standing Committee of the National People\'s Congress on Preserving Computer Network Security, and the related judicial interpretation.
+<br/>3.2 When using the services, you must comply with the following principles:
+<br/>3.2.1 You shall comply with all the network agreements, regulations, and procedures related to network services.
+<br/>3.2.2 You shall not participate in any activities that may cause unfavorable impact on the Internet.
+<br/>3.2.3 You shall not use the services for any illegal or commercial purpose.
+<br/>3.2.4 You shall not participate in any activities that go against Gree open platform.
+<br/>3.2.5 You shall not transmit any harassing, libelous, abusive, intimidate, vulgar, obscene, or illegal information.
+<br/>3.2.6 You shall obtain the consent, allowance, or permit required for legally submitting any information.
+<br/>3.2.7 You shall not distribute or post junk mails, unreasonably huge documents, chain mails, pyramid modes, viruses, or other technologies that may damage the services or benefits/properties of users of the services.
+<br/>3.3 You have the right to use the related services provided by Gree accounts based on the regulations of Gree users.
+<br/>3.4 If your registration information changes when you use the services, you shall timely update it accordingly.
+<br/>3.5 You shall bear legal liability for any conduct made using your account, including but not limited to all conduct by you or others using your account and password. If any loss is caused for Gree, its affiliates, or third parties because you fail to properly keep your account and password, you shall fully compensate Gree, its affiliates or third parties for it and eliminate the influence.
+<br/>3.6 You understand and agree to accept various information services provided by Gree or third parties when using all services provided by Gree accounts.
+<br/>3.7 Gree has the right to interrupt, change, or terminate services based on the actual situation, and Gree does not need to bear any liability for you or any other third party.
+<br/>
+<br/><b>4. Forbidden Behavior</b>
+<br/>You shall not use your Gree account to publish or spread sensitive information or any information violating state laws, regulations, and policies, including but not limited to the following information:
+<br/>4.1 Information that violates the basic principles determined by the Constitution of the People\'s Republic of China.
+<br/>4.2 Information that endangers national unity, sovereignty, and territorial integrity.
+<br/>4.3 Information that leaks state secrets, endangers state security, or harms national honor and interests.
+<br/>4.4 Information that incites ethnic hatred or ethnic discrimination, undermines national unity, or infringes upon nationality customs and habits.
+<br/>4.5 Information that promotes cults and superstitions.
+<br/>4.6 Information that spreads rumor, disturbs social order, or undermines social stability.
+<br/>4.7 Information that advocates obscenity, gambling, and violence, or instigates others to commit crimes.
+<br/>4.8 Information that insults or slanders others, and infringes upon the legal rights and interests of others.
+<br/>4.9 Information that endangers public ethics or the excellent national cultural traditions.
+<br/>4.10 Any other content prohibited by any law, administrative regulation, or provision of the state.
+<br/>
+<br/><b>5. Service Change, Interruption, or Termination</b>
+<br/>5.1 Considering the particularity of network services, users agree that Gree has the right to change, interrupt, or terminate part or all of network services at any time based on service development without informing users or bearing any liability for any users or third parties.
+<br/>5.2 Users understand that Gree needs to regularly or irregularly maintain or repair the platform providing network services (such as the Internet website and mobile network) or related devices. If network services are interrupted for a rational period due to such cases, Gree does not need to bear any liability, but Gree shall make a notice in advance as much as possible.
+<br/>5.3 Under any of the following circumstances, Gree has the right to interrupt or terminate the provisioning of network services (including charged network services) under this Agreement for users at any time, without bearing any liability for any users or third parties.
+<br/>5.3.1 Personal data provided by users is not true.
+<br/>5.3.2 Users violate the using rules stipulated in this Agreement.
+<br/>
+<br/><b>6. Intellectual Property Rights</b>
+<br/>6.1 Any text, picture, figure, audio, and/or video data contained in the network services provided by Gree are protected by the copyright, trademark, and/or other property right laws. Without consent of the related owner, the above data must not be used for any commercial purposes.
+<br/>6.2 All rights of any software (including but not limited to any image, photo, cartoon, video, audio, music, text, attached program, and attached help document contained in the software)used by Gree for providing network services belong to the copyright owner of the software. Without consent of the copyright owner, users shall not conduct reverse engineering, decompiling, or disassembling on the software.
+<br/>
+<br/><b>7. Privacy Protection</b>
+<br/>7.1 Protecting user privacy is a basic policy of Gree. Gree guarantees that it will not make public or provide to third parties the registration information of individual users and the non-public information that users store in Gree when using network services, unless under the following circumstances:
+<br/>7.1.1 Obtaining users\' express authorization in advance.
+<br/>7.1.2 Based on the related laws and regulations.
+<br/>7.1.3 Based on requirements of the related government authority.
+<br/>7.1.4 Based on investigation requirements of the public security organization, procuratorate, and court.
+<br/>7.1.5 For the purpose of maintaining social public benefits.
+<br/>7.1.6 For the purpose of safeguarding the legitimate rights and interests of Gree.
+<br/>7.2 Gree may cooperate with a third party to provide users with related network services. In this case, if the third party agrees to bear the same liability of protecting user privacy as Gree, Gree has the right to provide the registration information of users to the third party.
+<br/>7.3 Gree has the right to analyze the entire user database and use it for commercial purposes provided that it does not disclose the privacy data of individual users.
+<br/>7.4 Gree develops the following privacy right protection principles to guide user how to process issues of user privacy rights and user information involved in products:
+<br/> (1) Use the information we collect to provide users with valuable products and services.
+<br/> (2) Develop products that comply with privacy right standards and conventions.
+<br/> (3) Keep the collection of personal information transparent and introduce an authoritative third party to monitor the process.
+<br/> (4) Try our best efforts to protect the information we collect.
+<br/>
+<br/><b>8. Disclaimer</b>
+<br/>8.1 Gree does not guarantee that network services will surely meet user requirements, or network services will not be interrupted. Gree does not guarantee the timeliness, security, or accuracy of network services.
+<br/>8.2 Gree does not guarantee the accuracy and completeness of external URLs set for providing convenience to users. For the content of any webpage directed by such external URLs not actually controlled by Gree, Gree does not bear any liability.
+<br/>8.3 For any loss caused by telecommunications system or Internet faults, computer faults or viruses, information damage or loss, computer system issues, or any other force majeure reasons, Gree does not bear any liability, but will try hard to decrease the loss and impact on users.
+<br/>
+<br/><b>9. Applicable Law and Dispute Resolution</b>
+<br/>9.1 The Agreement shall be governed by the laws of the People\'s Republic of China.
+<br/>9.2 Any dispute caused by or related to this Agreement shall be settled by both parties through friendly negotiation. If the negotiation fails, either party may submit the dispute to the court of Gree\'s area with jurisdiction.
+<br/>
+<br/><b>10. Miscellaneous</b>
+<br/>10.1 If any clause in this Agreement is fully or partially invalid or does not have executive force due to any cause, or violates any applicable law, the clause is considered as being deleted, but other clauses of this Agreement shall be still effective and binding.
+<br/>10.2 Gree has the right to amend this Agreement at any time based on the change of related laws and regulations as well as the adjustment of Gree\'s business situations and policies without notice to users. The Agreement after amendment will be publicized at Gree website. Users can visit Gree website at any time to browse the latest service agreement clauses. If any of the related disputes occurs, the latest agreement text shall prevail. Users have the right to stop using network services if not agreeing with the amendment made by Gree on the related clauses of this Agreement. If users continue using network services, it is deemed that users accept such amendment.
+<br/>10.3 Gree has the right to interpret and amend this Agreement to the maximum extent permitted by law.]]></Data>
+ </string>
+
+</resources>

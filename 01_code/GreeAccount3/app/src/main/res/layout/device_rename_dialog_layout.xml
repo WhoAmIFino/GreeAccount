@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_full"
+    android:background="@drawable/gui_common_dialog_corners"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/dialog_title"
+        android:text="@string/refactor"/>
+
+    <com.gree.greeaccount.widget.EmojiFilterEditText
+        android:layout_marginTop="0dp"
+        android:id="@+id/edt"
+        android:maxLength="20"
+        style="@style/edit" />
+
+    <TextView
+        style="@style/txt_sub_des_with_dot"
+        android:layout_marginTop="@dimen/dot_first_margintop"
+        android:text="@string/device_name_relu" />
+
+    <TextView
+        style="@style/txt_sub_des_with_dot"
+        android:layout_marginBottom="@dimen/dot_first_margintop"
+        android:text="@string/device_name_relu2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/gree_gray" />
+
+    <LinearLayout
+        style="@style/layout_width_full"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_btn"
+            style="@style/btn_black"
+            android:layout_width="0dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/confirm_btn"
+            style="@style/btn_black"
+            android:layout_width="0dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:text="@string/confim" />
+    </LinearLayout>
+
+</LinearLayout>

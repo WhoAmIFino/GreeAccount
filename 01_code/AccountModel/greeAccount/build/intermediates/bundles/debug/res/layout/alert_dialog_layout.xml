@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_full"
+    android:background="@drawable/gui_common_dialog_corners"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dialog_title_margin"
+        android:text="@string/logout_alert"
+        android:textColor="@color/gree_black"
+        android:textSize="@dimen/dialog_title_size" />
+
+    <TextView
+        android:id="@+id/dialog_content"
+        style="@style/txv"
+        android:clickable="true"
+        android:layout_marginLeft="@dimen/btn_margin_lr"
+        android:layout_marginRight="@dimen/btn_margin_lr"
+        android:layout_marginTop="@dimen/dialog_content_margin"
+        android:layout_marginBottom="@dimen/dialog_title_margin"
+        android:textSize="@dimen/text_dialog_title_size" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/gree_gray" />
+
+
+    <Button
+        android:id="@+id/confirm_btn"
+        style="@style/btn_black"
+        android:layout_width="match_parent"
+        android:layout_margin="0dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:text="@string/confim" />
+
+
+</LinearLayout>

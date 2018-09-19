@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/login_title"
+        style="@style/provision_common_title"
+        android:text="@string/login_gree_account" />
+
+    <com.gree.greeaccount.widget.EmojiFilterEditText
+        android:id="@+id/login_phone_et"
+        style="@style/edit"
+        android:hint="@string/input_account"
+        android:inputType="text" />
+
+    <com.gree.greeaccount.widget.PasswdEditView
+        android:id="@+id/login_pwd"
+        style="@style/edt_layout" />
+
+    <TextView
+        style="@style/checkbox_lable"
+        android:layout_marginTop="@dimen/checkbox_margintop"
+        android:clickable="true"
+        android:onClick="problemClick"
+        android:layout_marginStart="@dimen/btn_margin_lr"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:text="@string/login_width_problem" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="loginClick"
+        android:text="@string/login" />
+
+</LinearLayout>

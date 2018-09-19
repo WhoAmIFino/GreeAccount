@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:splitMotionEvents="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="1dp"
+        android:elevation="0.5dp">
+
+        <ImageButton
+            android:id="@+id/actionbar_back_btn"
+            android:layout_width="13.2dp"
+            android:layout_height="22.8dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13.2dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_nav_back" />
+
+        <TextView
+            android:id="@+id/actionbar_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13.2dp"
+            android:layout_toRightOf="@id/actionbar_back_btn"
+            android:textColor="@color/gree_black"
+            android:textSize="22.8sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

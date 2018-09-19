@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_full"
+    android:background="@drawable/gui_common_dialog_corners"
+    android:orientation="vertical">
+
+    <!--
+    <TextView
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dialog_title_margin"
+        android:text="@string/logout_alert"
+        android:textColor="@color/gree_black"
+        android:textSize="@dimen/dialog_title_size" />
+        -->
+
+    <TextView
+        android:id="@+id/dialog_content"
+        android:layout_width="350.4dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28.8dp"
+        android:layout_marginLeft="32.4dp"
+        android:layout_marginRight="32.4dp"
+        android:layout_marginTop="28.8dp"
+        android:clickable="true"
+        android:textColor="@color/gree_black"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/gree_gray" />
+
+    <Button
+        android:id="@+id/confirm_btn"
+        style="@style/btn_blue"
+        android:layout_width="match_parent"
+        android:height="58.8dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:text="@string/i_know"
+        android:textAllCaps="false"
+        android:textColor="@color/gree_blue"
+        android:textSize="18sp" />
+
+</LinearLayout>

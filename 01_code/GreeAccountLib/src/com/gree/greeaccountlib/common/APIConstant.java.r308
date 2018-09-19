@@ -1,0 +1,33 @@
+package com.gree.greeaccountlib.common;
+
+public class APIConstant {
+
+	public static final String APP_ID = "test";
+	public static final String APP_KEY = "test";
+
+	public static final String TEST_SERVER_URL = "http://42.159.192.155:81/cloudtest";
+	public static final String SERVER_URL = "http://renew.gree.com/greecloud";
+
+	// post header
+	// public static final String KEY_APPID = "AppId";//
+	// public static final String KEY_APPKEY = "AppKey";//
+	// public static final String KEY_DEVICEID = "DeviceId";//
+	// public static final String KEY_DEVICETYPE = "DeviceType";//
+	// public static final String KEY_CONTENT_TYPE = "Content-Type";//
+	// post data
+	public static final String KEY_REQUESTID = "RequestId";//
+	public static final String KEY_SMSCODE = "SmsCode";//
+	public static final String KEY_NAME = "Name";//
+	public static final String KEY_PASSWORD = "Password";//
+	public static final String KEY_PHONE = "Phone";//
+	public static final String KEY_SERIALNUMBER = "SerialNumber";
+	public static final String KEY_MODEL = "Model";//
+	public static final String KEY_WIFIMAC = "WifiMac";//
+	public static final String KEY_IMEI = "IMEI";//
+	public static final String KEY_ICCID = "ICCID";//
+	public static final String KEY_EMAIL = "Email";//
+	public static final String KEY_ID = "Id";//
+	public static final String KEY_OLDPASSWORD = "OldPassword";//
+	public static final String KEY_NEWPASSWORD = "NewPassword";//
+
+}

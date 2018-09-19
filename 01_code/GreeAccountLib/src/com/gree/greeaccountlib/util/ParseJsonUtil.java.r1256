@@ -1,0 +1,89 @@
+package com.gree.greeaccountlib.util;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.gree.greeaccountlib.bean.ResponseBean;
+
+/**
+ * json解析类
+ * 
+ * @author 850305
+ *
+ */
+public class ParseJsonUtil {
+	private static String TAG = "ParseJsonUtil";
+
+	public static ResponseBean parseResponseJson(String json) {
+		ResponseBean bean = new ResponseBean();
+
+		try {
+			JSONObject rootObj = new JSONObject(json);
+			if (rootObj != null) {
+				if (rootObj.has("Name")) {
+					bean.setName(rootObj.getString("Name"));
+				}
+				if (rootObj.has("Token")) {
+					bean.setToken(rootObj.getString("Token"));
+				}
+				if (rootObj.has("MobilePhoneVerified")) {
+					bean.setMobilePhoneVerified(rootObj
+							.getString("MobilePhoneVerified"));
+				}
+				if (rootObj.has("Phone")) {
+					bean.setPhone(rootObj.getString("Phone"));
+				}
+				if (rootObj.has("EmailVerified")) {
+					bean.setEmailVerified(rootObj.getString("EmailVerified"));
+				}
+				if (rootObj.has("Email")) {
+					bean.setEmail(rootObj.getString("Email"));
+				}
+				if (rootObj.has("Id")) {
+					bean.setUserId(rootObj.getString("Id"));
+				}
+				if (rootObj.has("CreateTime")) {
+					bean.setCreateTime(rootObj.getString("CreateTime"));
+				}
+				if (rootObj.has("UpdateTime")) {
+					bean.setUpdateTime(rootObj.getString("UpdateTime"));
+				}
+
+				if (rootObj.has("GKey")) {
+					bean.setGKey(rootObj.getString("GKey"));
+				}
+
+				if (rootObj.has("OpenUserId")) {
+					bean.setOpenUserId(rootObj.getString("OpenUserId"));
+				}
+
+				if (rootObj.has("Code")) {
+					bean.setCode(rootObj.getString("Code"));
+				}
+
+				if (rootObj.has("Msg")) {
+					bean.setMsg(rootObj.getString("Msg"));
+				}
+
+				if (rootObj.has("RequestId")) {
+					bean.setRequsetId(rootObj.getString("RequestId"));
+				}
+
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+
+		LogUtils.i(TAG,
+				"parseResponseJson： " + bean.getCode() + "," + bean.getMsg()
+						+ "," + bean.getName() + "," + bean.getPassword() + ","
+						+ bean.getToken() + "," + bean.getMobilePhoneVerified()
+						+ "," + bean.getPhone() + "," + bean.getEmailVerified()
+						+ "," + bean.getEmail() + "," + bean.getUserId() + ","
+						+ bean.getCreateTime() + "," + bean.getUpdateTime()
+						+ "," + bean.getRequsetId() + "," + bean.getGKey()
+						+ "," + bean.getOpenUserId() + "," + bean.getIsLogin());
+
+		return bean;
+	}
+}

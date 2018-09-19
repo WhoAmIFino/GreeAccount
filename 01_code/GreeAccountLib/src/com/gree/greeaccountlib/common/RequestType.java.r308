@@ -1,0 +1,19 @@
+package com.gree.greeaccountlib.common;
+
+public class RequestType {
+
+	public static final int GET_SMS_CODE = 0X001;// 获取短信验证码
+	public static final int POST_VERIFY_MOBILE_PHONE = 0X002;// 验证短信验证码
+	public static final int POST_REGISTER_PHONE = 0X003;// 手机注册
+	public static final int POST_REGISTER_EMAIL = 0X004;// 邮箱注册
+	public static final int POST_EMAIL_VERIFY = 0X005;// 邮箱认证
+	public static final int POST_LOGIN = 0X006;// 登錄
+	public static final int POST_RESET_PASSWORD = 0X007;// 验证收到的验证码并重置密码
+	public static final int POST_REQUEST_PASSWORD_RESET = 0X008;// 邮箱找回密码
+	public static final int GET_GET_USERINFO = 0X009;// 获取用户信息
+	public static final int POST_UPDATE_USERINFO = 0X010;// 更新用户信息
+	public static final int POST_UPDATE_PASSWORD = 0X011;// 安全修改密码
+	public static final int DELETE_USER = 0X012;// 删除用户DELETE
+	
+
+}

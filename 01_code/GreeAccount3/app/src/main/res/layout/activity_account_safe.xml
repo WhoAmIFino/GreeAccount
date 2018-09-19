@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/item_classification"
+        android:text="@string/bind_manager" />
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="phoneClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/bind_phone" />
+
+        <TextView
+            android:id="@+id/safe_phone"
+            style="@style/item_right_goto"
+            android:text="@string/have_not_bind"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="emailClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/bind_email" />
+
+        <TextView
+            android:id="@+id/safe_email"
+            style="@style/item_right_goto"
+            android:text="@string/have_not_bind"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/item_classification"
+        android:text="@string/pwd_manager" />
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="reSetPwdClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/update_pwd" />
+
+        <TextView style="@style/item_right_goto" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/item_layout"
+        android:onClick="findPwdClick">
+
+        <TextView
+            style="@style/item_left_txv"
+            android:text="@string/find_pwd" />
+
+        <TextView style="@style/item_right_goto" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/item_classification"
+        android:text="@string/auth_type" />
+
+    <RelativeLayout
+        style="@style/item_layout"
+        android:onClick="realAuthClick">
+
+        <TextView
+            android:id="@+id/safe_auth_title"
+            style="@style/item_left_txv"
+            android:text="@string/real_auth" />
+
+        <TextView
+            style="@style/item_des_txv"
+            android:layout_below="@id/safe_auth_title"
+            android:text="@string/real_auth_safe_tips" />
+
+        <TextView
+            android:id="@+id/safe_auth"
+            style="@style/item_right_goto"
+            android:text="@string/no_auth" />
+    </RelativeLayout>
+
+</LinearLayout>

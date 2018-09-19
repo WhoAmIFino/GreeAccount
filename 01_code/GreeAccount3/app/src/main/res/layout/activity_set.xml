@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/root_view_style"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/error_list"
+        style="@style/item_txv"
+        android:onClick="Problem"
+        android:text="@string/FAQ"/>
+
+    <TextView
+        android:id="@+id/check_ver"
+        style="@style/item_txv"
+        android:onClick="checkVersion"
+        android:text="@string/check_version"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/version_txv"
+            style="@style/item_des_txv"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/version"/>
+    </RelativeLayout>
+</LinearLayout>

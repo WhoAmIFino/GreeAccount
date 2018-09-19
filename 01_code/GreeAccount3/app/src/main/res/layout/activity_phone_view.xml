@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/root_view_style"
+    android:orientation="vertical">
+
+    <ImageView
+        style="@style/layout_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/view_icon_marginbottom"
+        android:layout_marginTop="@dimen/view_icon_margintop"
+        android:src="@drawable/ic_blue_phone" />
+
+    <TextView
+        android:id="@+id/phone_txv"
+        style="@style/txv"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text_sub_title_size"/>
+
+    <TextView
+        style="@style/txv"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/view_des_margintop"
+        android:textSize="@dimen/text_sub_title_size"
+        android:text="@string/phone_view_des" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/next_btn"
+        style="@style/btn_blue"
+        android:onClick="nextClick"
+        android:text="@string/update_bind" />
+
+
+</LinearLayout>
